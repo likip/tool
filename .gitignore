@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/coreapi/hrmapps.coreapi/hrmapps.coreapi/.vs
+/coreapi/hrmapps.coreapi/hrmapps.coreapi/hrmapps.coreapi/bin/Release/netcoreapp2.2
+/coreapi/hrmapps.coreapi/hrmapps.coreapi/hrmapps.coreapi/obj/Release/netcoreapp2.2
+/coreapi/hrmapps.coreapi/hrmapps.coreapi/hrmapps.coreapi/Properties/PublishProfiles
+/coreapi/hrmapps.coreapi/hrmapps.coreapi/hrmapps.coreapi/hrmapps.coreapi.csproj.user
