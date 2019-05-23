@@ -1,0 +1,151 @@
+.container-fluid {
+    margin-top: 20px;
+  }
+
+  .logo{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .welcome h3{
+      text-align: center;
+      font-weight: bold;
+    color: #0f1a6b;
+  }
+
+  span.info-welcome {
+    color: #0f1a6b;
+    font-size: 12px;
+    line-height: 2.5;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .details{
+      padding: 10px;
+  } 
+  .note
+  {
+      text-align: center;
+      height: 80px;
+      background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+      color: #fff;
+      font-weight: bold;
+      line-height: 80px;
+  }
+  
+  .form-control{
+      border-radius:1.5rem;
+      width: 80%
+  }
+  .btnSubmit
+  {
+      border:none;
+      border-radius:1.5rem;
+      padding: 1%;
+      /* width: 20%; */
+      cursor: pointer;
+      background: #337ab7;
+      color: #fff;
+      outline: none;
+  }
+
+  .shadow-textarea textarea.form-control::placeholder {
+    font-weight: 300;
+}
+.shadow-textarea textarea.form-control {
+    padding-left: 0.8rem;
+}
+
+.radio-title{
+        font-weight: bold;
+        margin-right: 128px;
+    
+}
+.location-title {
+    float: left;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+h4.stay_title {
+    float: left;
+    margin-left: 22px;
+    font-size: 14px;
+    font-weight: bold;
+}
+input[type="date"]::before { 
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+ * 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+ */
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+.my-select {
+    border: 2 none ;
+    border-radius: 20px;
+    padding: 6px 20px;
+    outline: none;
+  }
+
+  .hr_row{
+    width: 1020px;
+    margin-right: 91px;
+  }
+input[type="file"]{
+    border: 2px solid;
+    border-radius: 1.5rem;
+    padding: 1%;
+    /* width: 20%; */
+    cursor: pointer;
+    /* background: #337ab7; */
+    color: #d8d4d4;
+    outline: none;
+    margin-bottom: 15px;
+}
+h5 {
+    float: left;
+    margin-top: 30px;
+    margin-right: 10px;
+}
+.employer_info{
+    line-height: 2;
+}
+.info {
+    background-color: #e7f3fe;
+    border-left: 6px solid #337ab7;
+    width: 92%;
+    margin-bottom: 10px;
+  }
+  .select_align{
+    margin-right: 195px;
+  }
+
+  .add_remove_functions{
+      margin-top: 15px;
+      padding: 10px;
+  }
+
+  .privacy_info[_ngcontent-c1] {
+    background-color: #e7f3fe;
+    border-top: 6px solid #337ab7 !important;
+    width: 99%;
+    margin-bottom: 50px;
+    line-height: 2;
+}
+
+input.btnSubmit.finalbutton {
+    margin-bottom: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+p{
+    font-size: 16px;
+}

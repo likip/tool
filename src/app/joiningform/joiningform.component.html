@@ -1,0 +1,870 @@
+<div class="container-fluid">
+  <div class="welcome">
+    <img src="../../assets/better.png" alt="loding" name="logo" class="logo">
+    <h3>Application Form</h3>
+    <span class="info-welcome">Please fill in the details with atmost attention,as these shall be verified by Aatral Technologies India pvt ltd. and/or by its authorized represntatives<br>
+    All details are mandatory</span>
+  </div>
+
+  <div class="personal-details details">
+  <div class="panel panel-primary text-center">
+    <div 
+      class="panel-heading" 
+      (click)="personal_opened = !personal_opened">
+      Fill in your personal details 
+      <i class="fa fa-plus" aria-hidden="true"></i>
+    </div>
+    <div 
+      class="panel-body" 
+      *ngIf="personal_opened">
+      <form>
+      <div class="container-fluid register-form">
+          <div class="form">
+
+              <div class="form-content">
+                   <div class="profile_pic">
+              <h5>Please affix your photo</h5>
+                 <img *ngFor='let url of urls'  [src]="url" height="200" > <br/>
+                
+                <input type='file' (change)="onSelectFile($event)" multiple value="Select a Profile picture" required >
+                </div> 
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="First Name *" name="firstname" id="firstname" value="" required/>
+                      </div>
+                    </div>
+                    <div  class="col-md-4  col-xs-12 col-sm-12">
+                      <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Middle Name " name="middlename"  id="middlename" value=""/>
+                    </div>
+                  </div>
+                  <div class="col-md-4  col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Last Name *" name="lastname" id="lastname" value="" required/>
+                      </div>
+                  </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-4  col-xs-12 col-sm-12">
+                          <div class="form-group">
+                              <input type="date" class="form-control" name="dob" id="dob" data-placeholder="Date of birth *" value="" required/>
+                              <!-- <input type="date" name="dob" data-placeholder="Date of birth" required aria-required="true" /> -->
+                          </div>
+                      </div>
+                      <div  class="col-md-4 col-xs-12 col-sm-12">
+                          <div class="form-group">
+                              <input type="text" class="form-control" name="placeofbirth" id="placeofbirth" placeholder="Place of birth *" value="" required/>
+                          </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Nationality *" name="nationality" id="nationality" value="" required/>
+                      </div>
+                    </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                          <div class="form-group">
+                              <input type="text" class="form-control" name="fathername" id="fathername" placeholder="Father Name *" value="" required/>
+                          </div>
+                        </div>
+                        <div  class="col-md-4 col-xs-12 col-sm-12">
+                          <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Personal Mail ID *" value="" required/>
+                        </div>
+                      </div>
+                      <div class="col-md-4 col-xs-12 col-sm-12">
+                          <div class="form-group">
+                              <input type="text" class="form-control" name="pan" id="pan" placeholder="PAN Number *" value="" required/>
+                          </div>
+                      </div>
+                      </div>
+
+                  <div class="row">
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <input type="tel" class="form-control"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="homephone" id="homephone" placeholder="Home Phone *" value="" required/>
+                      </div>
+                    </div>
+                    <div  class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                        <input type="tel" class="form-control"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="officephone" id="officephone" placeholder="office phone *" value="" required/>
+                    </div>
+                  </div>
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <input type="tel" class="form-control"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="mobile" id="mobile" placeholder="Mobile *" value="" required/>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-4 col-xs-12 col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="bloodgroup" id="bloodgroup" placeholder="Blood Group *" value="" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <div class="radio-title">
+                              Gender
+                              <label class="radio-inline">
+                                <input type="radio" name="option" value="male" id="option" required>Male
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" name="option" value="female" id="option">Female
+                              </label>
+                            </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="aadhar" id="aadhar" placeholder="Aadhar Number *" pattern="^\d{4}\s\d{4}\s\d{4}$" value="" required/>
+                      </div>
+                  </div>
+                    </div>
+
+                    <hr class="hr_row">
+
+                    <div class="row">
+                      <h3>Residential Address</h3>
+                      <div class="col-md-12  col-xs-12 col-sm-12">
+                          <div class="form-group shadow-textarea">
+                              <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Permanent Address" name="permanentaddres" id="permanentaddres"></textarea>
+                            </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6  col-xs-12 col-sm-12">
+                          <div class="form-group">
+                              <label for="city">City</label>
+                                  <select class="form-control" id="city" required>
+                                    <option>Dharwad</option>
+                                    <option>Bangalore</option>
+                                    <option>Tumkur</option>
+                                    <option>Mysore</option>
+                                  </select>
+                          </div>
+                        </div>
+                        <div  class="col-md-6  col-xs-12 col-sm-12">
+                          <div class="form-group">
+                              <label for="state">State</label>
+                              <select class="form-control" id="state">
+                                <option>karnataka</option>
+                                <option>AP</option>
+                                <option>Kerala</option>
+                                <option>Goa</option>
+                              </select>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6  col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="number" name="pinnumber" pattern="[0-9]{4}" maxlength="6" id="pinnumber" class="form-control" placeholder="Pin Number *" value="" required/>
+                            </div>
+                          </div>
+                          <div  class="col-md-6  col-xs-12 col-sm-12">
+                            <div class="form-group">
+                              <input type="tel" class="form-control"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" id="phone" placeholder="Phone Number *" value="" required/>
+                          </div>
+                        </div>
+                        </div>
+                      <div class="row">
+                          <h4 class="stay_title">Duration of stay</h4>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                          <div class="form-group">
+                          <input type="date" class="form-control" name="stay_from" id="stay_from" data-placeholder="From *" value="" required/>
+                           </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="date" class="form-control" name="stay_to" id="stay_to" data-placeholder="To *" value="" required/>
+                             </div>
+                          </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                            <div class="location-title">Nature of Location
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio" value="rented" required>Rented
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio" value="own">Own
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="optradio" value="other">Other
+                                </label>
+                              </div>
+                        </div>
+                      </div>
+
+                      <hr class="hr_row">
+                      <div class="row">
+                          <div class="col-md-12 col-xs-12 col-sm-12">
+                              <div class="form-group shadow-textarea">
+                                  <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Current Address" name="currentaddress" id="cuurentaddress"></textarea>
+                                </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6  col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                  <label for="city">City</label>
+                                  <select class="form-control" id="city" required>
+                                    <option>Dharwad</option>
+                                    <option>Bangalore</option>
+                                    <option>Tumkur</option>
+                                    <option>Mysore</option>
+                                  </select>
+                              </div>
+                            </div>
+                            <div  class="col-md-6 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                  <label for="state">State</label>
+                                  <select class="form-control" id="state" required>
+                                    <option>karnataka</option>
+                                    <option>AP</option>
+                                    <option>Kerala</option>
+                                    <option>Goa</option>
+                                  </select>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6 col-xs-12 col-sm-12">
+                                <div class="form-group">
+                                    <input type="number" name="pin"  pattern="[0-9]{4}" maxlength="6" id="pin" class="form-control" placeholder="Pin Number *" value="" required/>
+                                </div>
+                              </div>
+                              <div  class="col-md-6 col-xs-12 col-sm-12">
+                                <div class="form-group">
+                                  <input type="tel" class="form-control" name="phone"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone" placeholder="Phone Number *" value="" required/>
+                              </div>
+                            </div>
+                            </div>
+                          <div class="row">
+                              <h4 class="stay_title">Duration of stay</h4>
+                            <div class="col-md-4 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                  <input type="date" class="form-control" name="stay_from" id="stay_from" data-placeholder="From *" value="" required/>
+                               </div>
+                            </div>
+                            <div class="col-md-4 col-xs-12 col-sm-12">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" name="stay_to" id="stay_to" data-placeholder="To *" value="" required/>
+                                 </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <div class="location-title">Nature of Location
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" value="rented" required>Rented
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" value="own" required>Own
+                                    </label>
+                                    <label class="radio-inline">
+                                      <input type="radio" name="optradio" value="other" required>Other
+                                    </label>
+                                  </div>
+                            </div>
+                          </div>
+
+                  <input  type="submit" class="btnSubmit" value="save details">
+              </div>
+          </div>
+      </div>
+    </form>
+        
+    </div>
+  </div>
+</div>
+
+<div class="education-details details">
+    <div class="panel panel-primary text-center">
+      <div 
+        class="panel-heading" 
+        (click)="education_opened = !education_opened">
+        Fill in your educational details
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </div>
+      <div 
+        class="panel-body" 
+        *ngIf="education_opened">
+
+        <form>
+      <div class="container-fluid">
+          <h3>Graduation details</h3>
+          <div class="row">
+              <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="form-group">
+                   
+                    <select class="form-control" id="degree" required>
+                      <option>Select your degree</option>
+                      <option>BE</option>
+                      <option>Btech</option>
+                    </select>
+                </div>
+              </div>
+              <div  class="col-md-4 col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="discipline *" name="degreediscipline"  id="degreediscipline" value="" required/>
+              </div>
+            </div>
+            <div class="col-md-4 col-xs-12 col-sm-12">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Name of the institute *" name="degreeinstitue" id="degreeinstitue" value="" required/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-12">
+              <div class="form-group">     
+                  <input type="text" class="form-control" placeholder="Course Attended(morning/evening) *" name="degreecourse"  id="degreecourse" value="" required/>
+              </div>
+            </div>
+            <div  class="col-md-4">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Marks(% or CGPA) *" name="degreemarks"  id="degreemarks" value="" required/>
+            </div>
+          </div>
+          <div class="col-md-4 col-xs-12 col-sm-12">
+              <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Name of the board *" name="degreeboard" id="degreeboard" value="" required/>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <h4 class="stay_title">Duration of the course</h4>
+        <div class="col-md-4 col-xs-12 col-sm-12">
+          <div class="form-group">
+          <input type="date" class="form-control" name="degreestart_year" id="degreestart_year" data-placeholder="Year of Enrollment *" value="" required/>
+           </div>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-12">
+            <div class="form-group">
+                <input type="date" class="form-control" name="degreeend_year" id="degreeend_year" data-placeholder="Year Passed *" value="" required/>
+             </div>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-xs-12 col-sm-12">
+            <input type="text" class="form-control" placeholder="RollNumber/RegistrationNumber/ExamseatNumber*" name="degreeregisternumber" id="degreeregisternumber" value="" required/>
+        </div>
+      </div>
+
+      <hr class="hr_row">
+
+      <!-- pg -->
+      <h3>Post Graduation details</h3>
+      <div class="row">
+          <div class="col-md-4 col-xs-12 col-sm-12">
+            <div class="form-group">
+               
+                <select class="form-control" id="pg" required>
+                  <option>Select your degree</option>
+                  <option>BE</option>
+                  <option>Btech</option>
+                </select>
+            </div>
+          </div>
+          <div  class="col-md-4 col-xs-12 col-sm-12">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="discipline *" name="pgdiscipline"  id="pgdiscipline" value="" required/>
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-12">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Name of the institute *" name="pginstitue" id="pginstitue" value="" required/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-xs-12 col-sm-12">
+          <div class="form-group">     
+              <input type="text" class="form-control" placeholder="Course Attended(morning/evening) *" name="pgcourse"  id="pgcourse" value="" required/>
+          </div>
+        </div>
+        <div  class="col-md-4 col-xs-12 col-sm-12">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Marks(% or CGPA) *" name="pgmarks"  id="pgmarks" value="" required/>
+        </div>
+      </div>
+      <div class="col-md-4 col-xs-12 col-sm-12">
+          <div class="form-group">
+              <input type="text" class="form-control" placeholder="Name of the board *" name="pgboard" id="pgboard" value="" required/>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <h4 class="stay_title">Duration of the course</h4>
+    <div class="col-md-4 col-xs-12 col-sm-12">
+      <div class="form-group">
+      <input type="date" class="form-control" name="pgstart_year" id="pgstart_year" data-placeholder="Year of Enrollment *" value="" required/>
+       </div>
+    </div>
+    <div class="col-md-4 col-xs-12 col-sm-12">
+        <div class="form-group">
+            <input type="date" class="form-control" name="pgend_year" id="pgend_year" data-placeholder="Year Passed *" value="" required/>
+         </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-12 col-sm-12">
+        <input type="text" class="form-control" placeholder="RollNumber/RegistrationNumber/ExamseatNumber*" name="pgregisternumber" id="pgregisternumber" value="" required/>
+    </div>
+  </div>
+
+  <hr class="hr_row">
+  <!-- pg -->
+
+  <!-- others -->
+  <h3>Any other educational details</h3>
+  <div class="row">
+      <div class="col-md-4 col-xs-12 col-sm-12">
+        <div class="form-group">
+           
+            <select class="form-control" id="pg" required>
+              <option>Select your degree</option>
+              <option>BE</option>
+              <option>Btech</option>
+            </select>
+        </div>
+      </div>
+      <div  class="col-md-4 col-xs-12 col-sm-12">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="discipline *" name="otherdiscipline"  id="otherdiscipline" value="" required/>
+      </div>
+    </div>
+    <div class="col-md-4 col-xs-12 col-sm-12">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name of the institute *" name="otherinstitue" id="otherinstitue" value="" required/>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-xs-12 col-sm-12">
+      <div class="form-group">     
+          <input type="text" class="form-control" placeholder="Course Attended(morning/evening) *" name="othercourse"  id="othercourse" value="" required/>
+      </div>
+    </div>
+    <div  class="col-md-4 col-xs-12 col-sm-12">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Marks(% or CGPA) *" name="othermarks"  id="othermarks" value="" required/>
+    </div>
+  </div>
+  <div class="col-md-4 col-xs-12 col-sm-12">
+      <div class="form-group">
+          <input type="text" class="form-control" placeholder="Name of the board *" name="otherboard" id="otherboard" value="" required/>
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <h4 class="stay_title">Duration of the course</h4>
+<div class="col-md-4 col-xs-12 col-sm-12">
+  <div class="form-group">
+  <input type="date" class="form-control" name="otherstart_year" id="otherstart_year" data-placeholder="Year of Enrollment *" value="" required/>
+   </div>
+</div>
+<div class="col-md-4 col-xs-12 col-sm-12">
+    <div class="form-group">
+        <input type="date" class="form-control" name="otherend_year" id="otherend_year" data-placeholder="Year Passed *" value="" required/>
+     </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-md-6 col-xs-12 col-sm-12">
+    <input type="text" class="form-control" placeholder="RollNumber/RegistrationNumber/ExamseatNumber*" name="otherregisternumber" id="otherregisternumber" value="" required/>
+</div>
+</div>
+<!-- others -->
+<hr class="hr_row">
+
+<div class="row">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+        <div class="form-group shadow-textarea">
+            <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Reasons for breaks in education(if any)" name="educationbreak" id="educationbreak" required></textarea>
+          </div>
+    </div>
+  </div>
+
+      <input  type="submit" class="btnSubmit" value="save details">
+      </div>
+      </form>
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="experience-details details">
+      <div class="panel panel-primary text-center">
+        <div 
+          class="panel-heading" 
+          (click)="experience_opened = !experience_opened">
+          Fill in your work experience 
+          <i class="fa fa-plus" aria-hidden="true"></i>
+        </div>
+        <div 
+          class="panel-body" 
+          *ngIf="experience_opened">
+      <form [formGroup]='formName'>
+        <div class="container-fluid" formArrayName="controllerArray">
+            <div *ngFor="let item of formName.controls.controllerArray.controls; let i=index" [formGroupName]="i">
+            <div class="info employer_info">
+                <p><strong>Employement Record:</strong> Starting with your present or most recent employer, please list last 3 employments. <strong>When listing consulting or
+                  temporary assignments,<br> under “Employer”, state the name of the consulting or temporary agency that placed you at the client site.<br> Complete and
+                  accurate dates (month/year) must be provided.</strong></p>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="controlerInputName1" placeholder="Current Employer *"  id="currentemployeer" value="" required/>
+                    </div>
+                  </div>
+                  <div  class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control"  formControlName="controlerInputName1" placeholder="Employer's PhoneNumber *"   id="employerphone" value="" required/>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" formControlName="controlerInputName1" placeholder="Employer Fax Number *" id="employerfaxnumber" value="" required/>
+                    </div>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                        <div class="form-group">
+                            <input type="text" class="form-control" formControlName="controlerInputName1" placeholder="Employer ID *" id="employerid" value="" required/>
+                        </div>
+                    </div>
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                    <div class="form-group">
+                    <input type="date" class="form-control" formControlName="controlerInputName1" id="empstart_year" data-placeholder="From *" value="" required/>
+                     </div>
+                  </div>
+                  <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <input type="date" class="form-control" formControlName="controlerInputName1" id="empend_year" data-placeholder="To *" value="" required/>
+                       </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <label for="city">City</label>
+                              <select class="form-control" id="city" formControlName="controlerInputName1" required>
+                                <option>Dharwad</option>
+                                <option>Bangalore</option>
+                                <option>Tumkur</option>
+                                <option>Mysore</option>
+                              </select>
+                      </div>
+                    </div>
+                    <div  class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <label for="state">State</label>
+                          <select class="form-control" formControlName="controlerInputName1" id="state">
+                            <option>karnataka</option>
+                            <option>AP</option>
+                            <option>Kerala</option>
+                            <option>Goa</option>
+                          </select>
+                    </div>
+                  </div>
+                  <div  class="col-md-4 col-xs-12 col-sm-12">
+                      <div class="form-group">
+                          <label for="state">Country</label>
+                          <select class="form-control"  formControlName="controlerInputName1" id="state">
+                            <option>India</option>
+                            <option>Japan</option>
+                            <option>USA</option>
+                            <option>Canada</option>
+                          </select>
+                    </div>
+                  </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-6 col-xs-12 col-sm-12">
+                          <div class="form-group">
+                          <input type="text" class="form-control" formControlName="controlerInputName1"  id="job_title" placeholder="Job Title *" value="" required/>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="number" formControlName="controlerInputName1"  pattern="[0-9]{4}" maxlength="6" id="pinnumber" class="form-control" placeholder="Pin Number *" value="" required/>
+                            </div>
+                          </div>
+                  </div>
+
+                <div class="row">
+                  <div class="col-md-12 col-xs-12 col-sm-12">
+                    <div class="form-group shadow-textarea">
+                        <textarea class="form-control z-depth-1" formControlName="controlerInputName1"  rows="3" placeholder="Reasons for Leaving(if any)"  id="jobleaving_reason" required></textarea>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                      <div class="form-group shadow-textarea">
+                          <textarea class="form-control z-depth-1" formControlName="controlerInputName1"  rows="3" placeholder="Reasons for breaks in employment(if any)" id="employmentbreak" required></textarea>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-12 col-xs-12 col-sm-12">
+                          <div class="location-title">Employment Status
+                              <label class="radio-inline">
+                                <input type="radio" formControlName="controlerInputName1"  value="fulltime" required>Fulltime
+                              </label>
+                              <label class="radio-inline">
+                                <input type="radio" formControlName="controlerInputName1"  value="contract">Contract/Through Outsourcing Agency
+                              </label>
+                            </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <h3>Outsourcing Agency Details</h3>
+                        <div class="col-md-6 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="text" formControlName="controlerInputName1"  id="agencyname" class="form-control" placeholder="Agency Name *" value="" required/>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="tel" formControlName="controlerInputName1" id="agencyphone" class="form-control" placeholder="Agency Phone Number *" value="" required/>
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-12 col-xs-12 col-sm-12">
+                              <div class="form-group shadow-textarea">
+                                  <textarea class="form-control z-depth-1" formControlName="controlerInputName1" rows="3" placeholder="Agency Address"  id="agencyaddress"></textarea>
+                                </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12 col-sm-12">
+                                <div class="form-group shadow-textarea">
+                                    <textarea class="form-control z-depth-1" formControlName="controlerInputName1"  rows="3" placeholder="Description of duties"  id="agencyduties"></textarea>
+                                  </div>
+                            </div>
+                          </div>
+
+                          <div class="row">
+                              <h3>Supervisor's Details</h3>
+                              <div class="col-md-6 col-xs-12 col-sm-12">
+                                  <div class="form-group">
+                                      <input type="text"  formControlName="controlerInputName1" id="supervisorname" class="form-control" placeholder="Name *" value="" required/>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-xs-12 col-sm-12">
+                                  <div class="form-group">
+                                      <input type="tel" formControlName="controlerInputName1" id="supervisorphone" class="form-control" placeholder="Phone Number *" value="" required/>
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 col-xs-12 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text"  formControlName="controlerInputName1" id="supervisortitle" class="form-control" placeholder="Title *" value="" required/>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 col-xs-12 col-sm-12">
+                                      <div class="form-group">
+                                          <input type="email"  formControlName="controlerInputName1" id="supervisormail" class="form-control" placeholder="Email(preferably official) *" value="" required/>
+                                      </div>
+                                    </div>
+                            </div>
+
+                            <div class="row">
+                                <h3>HR Manager's Details</h3>
+                                <div class="col-md-6 col-xs-12 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="text" id="hrname" formControlName="controlerInputName1" class="form-control" placeholder="Name *" value="" required/>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-xs-12 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="tel" id="hrphone" formControlName="controlerInputName1" class="form-control" placeholder="Phone Number *" value="" required/>
+                                    </div>
+                                  </div>
+                              </div>
+  
+                              <div class="row">
+                                  <div class="col-md-6 col-xs-12 col-sm-12">
+                                      <div class="form-group">
+                                          <input type="text"  id="hrtitle" formControlName="controlerInputName1" class="form-control" placeholder="Title *" value="" required/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-6 col-xs-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="email"  id="hrmail" formControlName="controlerInputName1" class="form-control" placeholder="Email(preferably official) *" value="" required/>
+                                        </div>
+                                      </div>
+                              </div>
+  
+                              <hr class="hr_row">
+
+                              <div class="row">
+                                  <h3>Client Details</h3>
+                                  <div class="col-md-4 col-xs-12 col-sm-12">
+                                      <div class="form-group">
+                                          <input type="text"  formControlName="controlerInputName1" id="clientname1" class="form-control" placeholder="Client *" value="" required/>
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4 col-xs-12 col-sm-12">
+                                      <div class="form-group">
+                                          <input type="text"  formControlName="controlerInputName1" id="clientduration1" class="form-control" placeholder="Duration *" value="" required/>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text" formControlName="controlerInputName1" id="clientrole1" class="form-control" placeholder="Role *" value="" required/>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <h3>Client Details</h3>
+                                    <div class="col-md-4 col-xs-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text"  formControlName="controlerInputName1" id="clientname2" class="form-control" placeholder="Client *" value="" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xs-12 col-sm-12">
+                                        <div class="form-group">
+                                            <input type="text"  formControlName="controlerInputName1" id="clientduration2" class="form-control" placeholder="Duration *" value="" required/>
+                                        </div>
+                                      </div>
+                                      <div class="col-md-4 col-xs-12 col-sm-12">
+                                          <div class="form-group">
+                                              <input type="text"  formControlName="controlerInputName1" id="clientrole2" class="form-control" placeholder="Role *" value="" required/>
+                                          </div>
+                                      </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-12 col-xs-12 col-sm-12">
+                                        <div class="form-group shadow-textarea">
+                                            <textarea class="form-control z-depth-1" formControlName="controlerInputName1"  rows="3" placeholder="Reasons for breaks in employment history" id="breakemployment"></textarea>
+                                          </div>
+                                    </div>
+                                </div>
+                  <div class="row add_remove_functions">
+                    <div class="col-md-12 col-xs-12 col-sm-12">
+                  <button (click)='removeInput(i)' class="btnSubmit">remove experience</button>
+                  <button (click)='addInput()' class="btnSubmit">add experience</button></div>
+                </div>
+
+                
+                  <div class="professional_refrences">
+                    <h3>Professional Refrences</h3>
+                      <div class="row">
+                          <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Name *" name="refrencename" id="refrencename" value="" required/>
+                            </div>
+                          </div>
+                          <div  class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Organization *" name="refrenceorganisation"  id="refrenceorganisation" value="" required/>
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Designation/Position *" name="designation" id="designation" value="" required/>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                  <input type="tel" class="form-control" placeholder="Landline Number *" name="landlinerefrence" id="landlinerefrence" value="" required/>
+                              </div>
+                            </div>
+                            <div  class="col-md-4 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Mobile *" name="mobilerefrence"  id="mobilerefrence" value="" required/>
+                            </div>
+                          </div>
+                          <div class="col-md-4 col-xs-12 col-sm-12">
+                              <div class="form-group">
+                                  <input type="email" class="form-control" placeholder="Email *" name="email" id="email" value="" required/>
+                              </div>
+                          </div>
+                          </div>
+                </div>
+
+                <input  type="submit" class="btnSubmit" value="save details">
+
+        </div>
+      </div>
+      </form>
+     
+        
+        </div>
+      </div>
+    </div>
+    <div class="privacy_info">
+        <p><strong> INFORMATION RELEASE AUTHORIZATION</strong><br>
+          I certify that the statements made in this application are valid and complete to the best of my knowledge. I understand that false or
+misleading information may disqualify me from employment and /or result in termination of employment.
+          <br>I understand that Aatral Technologies India Pvt Ltd. may request a verification of information provided by me and /or background check
+          from an agency hired by Aatral Technologies India Pvt Ltd. for this purpose.<br>
+          I further understand that the results of verification and checks and any records made out of that information will be used for employment
+          purposes only and will not be given to unauthorized persons.<br>
+          I authorize Aatral Technologies India Pvt Ltd. and/or its agents Pinkerton Corporate Risk Management India Pvt Ltd. to conduct a
+          verification and background check including but not limited to the verification and check of information and references stated by me in
+          this application for the consideration of Aatral Technologies India Pvt Ltd. be used only for my employment purposes.<br>
+          I also authorize all the concerned persons, authorities, organizations, their employees, agents or authorized representatives, whether named
+          in the application or not, to release the information in their knowledge / possession / records relevant to my employment.<br>
+          In the event that Aatral Technologies India Pvt Ltd. and /or its agents are unable to verify any information and references stated in this
+          application, it is my responsibility to furnish the necessary documentation in support of that information.<br>
+          I fully understand that this application or subsequent employment does not create a contract of employment nor guarantee employment for
+          any definite period of time and my employment decision will always be at the sole discretion of Aatral Technologies India Pvt Ltd.
+          I have read, understood, and by my signature consent to these statements.</p>
+          <div class="row">
+            <div class="col-md-12 col-xs-12 col-sm-12">
+          <div class="form-group">
+              <div class="radio-title">
+                  I authorize Aatral Technologies India Pvt Ltd. to contact my present employer.
+                  <label class="radio-inline">
+                    <input type="radio" name="option" value="male" id="yes" required>yes
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="option" value="female" id="no">No
+                  </label>
+                </div>
+          </div>
+          </div>
+        </div>
+           
+      </div>
+      <input  type="submit" class="btnSubmit finalbutton" value="Confirm and Save all details">
+</div>

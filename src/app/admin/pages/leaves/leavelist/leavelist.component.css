@@ -1,0 +1,83 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+  .logo{
+    width: 100%;
+  }
+ 
+  .mat-sidenav-container{
+    background-color: white;
+    height: 590px;
+  }
+  .table{
+    margin-top: 50px;
+  }
+
+  .card-deck{
+    margin-top: 30px;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+  .parent{
+    margin-top: 0px;
+  }
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 10px;
+  }
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+  button.example-icon.mat-button {
+    margin-left: auto;
+}
+
+  .mat-toolbar.mat-primary {
+    background: #fff;
+    color: #3f51b5;
+}
+
+/* css */
+input[type="date"]::before { 
+  content: attr(data-placeholder);
+  width: 100%;
+}
+
+/* hide our custom/fake placeholder text when in focus to show the default
+* 'mm/dd/yyyy' value and when valid to show the users' date of birth value.
+*/
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: blue !important;
+}
+::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+  font-weight: normal !important;}
+
+  .card-title {
+    margin-bottom: .75rem;
+    font-size: 20px;
+    font-weight: 500;
+}
+.form-group{
+  width: 30%;
+}
+
+.mat-checkbox{
+  font-weight: normal;
+}
+
+.example-margin {
+  margin: 0 10px;
+}

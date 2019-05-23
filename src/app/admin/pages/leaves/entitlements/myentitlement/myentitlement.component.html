@@ -1,0 +1,218 @@
+
+<mat-toolbar color="primary" class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded">
+		<mat-icon>menu</mat-icon></button>
+	<div>
+			<img src="../../assets/logowhite.png" alt="loding" name="logo" class="logo">
+	</div>
+
+	<button mat-button [matMenuTriggerFor]="belowMenu" class="example-icon">  <i class="material-icons">
+			account_box
+			</i></button>
+	<mat-menu #belowMenu="matMenu" yPosition="below">
+		<button mat-menu-item>Change Password</button>
+		<button mat-menu-item>Logout</button>
+	</mat-menu>
+	<a href="#" class="example-icon">Important Links</a>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+
+				<mat-nav-list>
+
+                        <a mat-list-item routerLink="/dash">
+                            <span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
+        <mat-icon mat-list-icon>home</mat-icon>
+            </a>
+
+						<mat-list-item [matMenuTriggerFor]="user">
+								<span class="full-width" *ngIf="isExpanded || isShowing">User Management</span>
+				<mat-icon mat-list-icon>perm_identity</mat-icon>
+						</mat-list-item>
+						<mat-menu #user="matMenu">
+					<a routerLink="/users"><button mat-menu-item>Users</button></a>
+						</mat-menu>
+
+						<mat-list-item [matMenuTriggerFor]="admin">
+							<span class="full-width" *ngIf="isExpanded || isShowing">Admin</span>
+			<mat-icon mat-list-icon>receipt</mat-icon>
+					</mat-list-item>
+	<mat-menu #admin="matMenu">
+<button mat-menu-item  [matMenuTriggerFor]="job">Job</button>
+<button mat-menu-item [matMenuTriggerFor]="organisation">Organisation</button>
+<button mat-menu-item [matMenuTriggerFor]="qualification">Qualification</button>
+						<button mat-menu-item [matMenuTriggerFor]="aconfigure">Configuration</button>
+<a routerLink="/"><button mat-menu-item>Nationalities</button></a>
+					</mat-menu>
+
+	<mat-menu #job="matMenu">
+			<a routerLink="/addentitlement"><button mat-menu-item>Job Title</button></a>
+			<a routerLink="/leaventitlement"><button mat-menu-item>Employee Status</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Pay Grades</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Job Categories</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Work Shift</button></a>
+	</mat-menu>
+
+	<mat-menu #organisation="matMenu">
+			<a routerLink="/addentitlement"><button mat-menu-item>General Information</button></a>
+			<a routerLink="/leaventitlement"><button mat-menu-item>Structure</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Location</button></a>
+	</mat-menu>
+
+	<mat-menu #qualification="matMenu">
+			<a routerLink="/addentitlement"><button mat-menu-item>Skills</button></a>
+			<a routerLink="/leaventitlement"><button mat-menu-item>Education</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Certifications</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Languages</button></a>
+	</mat-menu>
+
+	<mat-menu #aconfigure="matMenu">
+			<a routerLink="/addentitlement"><button mat-menu-item>Email Configuration</button></a>
+			<a routerLink="/leaventitlement"><button mat-menu-item>Email Subscription</button></a>
+			<a routerLink="/myentitlement"><button mat-menu-item>Modules</button></a>
+	</mat-menu>
+
+						<mat-list-item [matMenuTriggerFor]="leave">
+								<span class="full-width" *ngIf="isExpanded || isShowing">Leave</span>
+				<mat-icon mat-list-icon>receipt</mat-icon>
+						</mat-list-item>
+						<mat-menu #leave="matMenu">
+							<button mat-menu-item>Apply Leave</button>
+							<button mat-menu-item>My Leave</button>
+							<button mat-menu-item [matMenuTriggerFor]="entitlements">Entitlements</button>
+							<button mat-menu-item [matMenuTriggerFor]="ecofigure">Configure</button>
+							<button mat-menu-item [matMenuTriggerFor]="ereports">Reports</button>
+							<button mat-menu-item>Leave List</button>
+							<button mat-menu-item>Assign Leave</button>
+						</mat-menu>
+
+						<mat-menu #entitlements="matMenu">
+							<button mat-menu-item>Add Entitlements</button>
+							<button mat-menu-item>Employee Entitlements</button>
+							<button mat-menu-item>My Entitlements</button>
+						</mat-menu>
+
+						<mat-menu #ereports="matMenu">
+								<button mat-menu-item>Leave Entitlements and Usagereports</button>
+								<button mat-menu-item>My Leave Entitlements and Usagereports</button>
+							</mat-menu>
+
+						<mat-menu #ecofigure="matMenu">
+								<button mat-menu-item>Leave Period</button>
+								<button mat-menu-item>Leave Type</button>
+								<button mat-menu-item>Work Week</button>
+								<button mat-menu-item>Holidays</button>
+					    </mat-menu>
+					
+						<mat-list-item [matMenuTriggerFor]="pim">
+								<span class="full-width" *ngIf="isExpanded || isShowing">PIM</span>
+				<mat-icon mat-list-icon>assessment</mat-icon>
+						</mat-list-item>
+						<mat-menu #pim="matMenu">
+							<button mat-menu-item [matMenuTriggerFor]="configuration">Configuration</button>
+							<button mat-menu-item >Employee List</button>
+							<button mat-menu-item >Add Employee</button>
+							<button mat-menu-item >Reports</button>
+						</mat-menu>
+					
+						<mat-menu #configuration="matMenu">
+							<button mat-menu-item>Optional Fields</button>
+							<button mat-menu-item>Custom Fields</button> 
+							<button mat-menu-item>Data Import</button> 
+							<button mat-menu-item>Reporting Method</button> 
+							<button mat-menu-item>Terimantion Reasons</button> 
+            </mat-menu>
+            
+            <mat-list-item [matMenuTriggerFor]="time">
+              <span class="full-width" *ngIf="isExpanded || isShowing">Time</span>
+              <mat-icon mat-list-icon>schedule</mat-icon>
+          </mat-list-item>
+          <mat-menu #time="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="timesheets">Timesheets</button>
+            <button mat-menu-item [matMenuTriggerFor]="tattendance">Attendance</button>
+            <button mat-menu-item [matMenuTriggerFor]="treports">Report</button>
+            <button mat-menu-item [matMenuTriggerFor]="tproject">Project Info</button>
+          </mat-menu>
+          <mat-menu #timesheets="matMenu">
+              <button mat-menu-item>My timesheets</button>
+              <button mat-menu-item>Employee timesheets</button>  
+            </mat-menu>
+            <mat-menu #tattendance="matMenu">
+                <button mat-menu-item>My Records</button>
+                <button mat-menu-item>Punch In/Out</button>  
+                <button mat-menu-item>Employee Records</button>  
+                <button mat-menu-item>Configuration</button>  
+              </mat-menu>
+              <mat-menu #treports="matMenu">
+                  <button mat-menu-item>Project Reports</button>
+                  <button mat-menu-item>Employee Reports</button> 
+                  <button mat-menu-item>Attendance Summary</button>  
+                </mat-menu>
+                <mat-menu #tproject="matMenu">
+                    <button mat-menu-item>Customers</button>
+                    <button mat-menu-item>Projectsss</button> 
+                  </mat-menu>
+					
+						<a mat-list-item routerLink="/login">
+							<!-- <i class="material-icons">
+									account_circle
+									</i> <span class="nav-caption">My info</span> -->
+									<span class="full-width" *ngIf="isExpanded || isShowing">My info</span>
+				<mat-icon mat-list-icon>account_circle</mat-icon>
+					</a>
+					
+					<mat-list-item [matMenuTriggerFor]="performance">
+						<!-- <i class="material-icons">
+								account_circle
+								</i>
+							<a matline>Performance</a> -->
+			<span class="full-width" *ngIf="isExpanded || isShowing">Performance</span>
+				<mat-icon mat-list-icon>account_circle</mat-icon>
+					</mat-list-item>
+					<mat-menu #performance="matMenu">
+						<button mat-menu-item [matMenuTriggerFor]="reviews">Manage Reviews</button>
+						<button mat-menu-item>My Trackers</button>
+						<button mat-menu-item>Employee Trackers</button>
+					</mat-menu>
+					
+					<mat-menu #reviews="matMenu">
+						<button mat-menu-item>My Reviews</button>
+						<button mat-menu-item>Review list</button>
+					</mat-menu>
+					
+					<a mat-list-item routerLink="#">
+							<span class="full-width" *ngIf="isExpanded || isShowing">Directory</span>
+							<mat-icon mat-list-icon>account_circle</mat-icon>  
+					</a>
+					 
+						</mat-nav-list>
+	</mat-sidenav>
+	
+<div class="myentitlement">
+	<div class="container">
+			<div class="card shadow p-3 mb-5 bg-white rounded">
+					<div align="center" class="card-title">My Leave Entitlement</div>
+
+          <div class="form-group">
+            <label for="leavetype">Leave Type</label>
+                <select class="form-control" id="leavetype" required>
+                  <option>All</option>
+                  <option>AnnualLeave</option>
+                  <option>Lossofpay</option>
+                  <option>BereavementLeave</option>
+                  <option>MaternityLeave</option>
+                  <option>MedicalLeave</option>
+                  <option>PaternityLeave</option>
+                  <option>SpecialLeave</option>
+                </select>
+        </div>
+
+        <ejs-daterangepicker class="border col-sm-6" format='dd-MM-yyyy' placeholder="select your leave period (DD/MM/YYYY)"></ejs-daterangepicker>
+
+										<button class="btn btn-success">Search</button>
+<hr>
+										<app-table></app-table>
+	</div>
+</div>
+</div>
+</mat-sidenav-container>

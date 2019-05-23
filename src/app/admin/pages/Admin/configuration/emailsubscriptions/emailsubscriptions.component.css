@@ -1,0 +1,115 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+  .logo{
+    width: 100%;
+  }
+ 
+  .mat-sidenav-container{
+    background-color: white;
+    height: 800px;
+  }
+
+  .table{
+    margin-top: 50px;
+  }
+
+  .card-deck{
+    margin-top: 15px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+
+  .parent{
+    margin-top: 0px;
+  }
+
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 10px;
+  }
+
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+
+  button.example-icon.mat-button {
+    margin-left: auto;
+}
+
+  .mat-toolbar.mat-primary {
+    background: #fff;
+    color: #3f51b5;
+}
+
+/* leave css */
+.card{
+  margin: 15px;
+}
+.mat-form-field{
+  width: 50%;
+  padding: 15px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.mat-checkbox{
+  font-weight: normal;
+}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+  background-color: blue !important;
+}
+::ng-deep .mat-checkbox-layout .mat-checkbox-label {
+  font-weight: normal !important;}
+
+  .card-title {
+    margin-bottom: .75rem;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+input[type="date"]::before { 
+  content: attr(data-placeholder);
+  width: 100%;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+.btn{
+  margin: 5px;
+}
+
+textarea.form-control.col-md-7{
+  margin-left: 15px;
+}
+
+input.form-check-input.label1 {
+  margin-left: -20px;
+}
+
+.radio-title {
+  font-weight: bold;
+}

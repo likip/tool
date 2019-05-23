@@ -1,0 +1,1931 @@
+
+<mat-toolbar color="primary" class="example-toolbar">
+  <button mat-icon-button (click)="isExpanded = !isExpanded">
+    <mat-icon>menu</mat-icon></button>
+  <div>
+      <img src="../../assets/logowhite.png" alt="loding" name="logo" class="logo">
+  </div>
+
+  <button mat-button [matMenuTriggerFor]="belowMenu" class="example-icon">  <i class="material-icons">
+      account_box
+      </i></button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item>Change Password</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+  <a href="#" class="example-icon">Important Links</a>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+
+        <mat-nav-list>
+
+                        <a mat-list-item routerLink="/dash">
+                            <span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
+        <mat-icon mat-list-icon>home</mat-icon>
+            </a>
+
+            <mat-list-item [matMenuTriggerFor]="user">
+                <span class="full-width" *ngIf="isExpanded || isShowing">User Management</span>
+        <mat-icon mat-list-icon>perm_identity</mat-icon>
+            </mat-list-item>
+            <mat-menu #user="matMenu">
+          <a routerLink="/users"><button mat-menu-item>Users</button></a>
+            </mat-menu>
+
+            <mat-list-item [matMenuTriggerFor]="admin">
+              <span class="full-width" *ngIf="isExpanded || isShowing">Admin</span>
+      <mat-icon mat-list-icon>receipt</mat-icon>
+          </mat-list-item>
+  <mat-menu #admin="matMenu">
+<button mat-menu-item  [matMenuTriggerFor]="job">Job</button>
+<button mat-menu-item [matMenuTriggerFor]="organisation">Organisation</button>
+<button mat-menu-item [matMenuTriggerFor]="qualification">Qualification</button>
+            <button mat-menu-item [matMenuTriggerFor]="aconfigure">Configuration</button>
+<a routerLink="/"><button mat-menu-item>Nationalities</button></a>
+          </mat-menu>
+
+  <mat-menu #job="matMenu">
+      <a routerLink="/addentitlement"><button mat-menu-item>Job Title</button></a>
+      <a routerLink="/leaventitlement"><button mat-menu-item>Employee Status</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Pay Grades</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Job Categories</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Work Shift</button></a>
+  </mat-menu>
+
+  <mat-menu #organisation="matMenu">
+      <a routerLink="/addentitlement"><button mat-menu-item>General Information</button></a>
+      <a routerLink="/leaventitlement"><button mat-menu-item>Structure</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Location</button></a>
+  </mat-menu>
+
+  <mat-menu #qualification="matMenu">
+      <a routerLink="/addentitlement"><button mat-menu-item>Skills</button></a>
+      <a routerLink="/leaventitlement"><button mat-menu-item>Education</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Certifications</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Languages</button></a>
+  </mat-menu>
+
+  <mat-menu #aconfigure="matMenu">
+      <a routerLink="/addentitlement"><button mat-menu-item>Email Configuration</button></a>
+      <a routerLink="/leaventitlement"><button mat-menu-item>Email Subscription</button></a>
+      <a routerLink="/myentitlement"><button mat-menu-item>Modules</button></a>
+  </mat-menu>
+
+            <mat-list-item [matMenuTriggerFor]="leave">
+                <span class="full-width" *ngIf="isExpanded || isShowing">Leave</span>
+        <mat-icon mat-list-icon>receipt</mat-icon>
+            </mat-list-item>
+            <mat-menu #leave="matMenu">
+              <button mat-menu-item>Apply Leave</button>
+              <button mat-menu-item>My Leave</button>
+              <button mat-menu-item [matMenuTriggerFor]="entitlements">Entitlements</button>
+              <button mat-menu-item [matMenuTriggerFor]="ecofigure">Configure</button>
+              <button mat-menu-item [matMenuTriggerFor]="ereports">Reports</button>
+              <button mat-menu-item>Leave List</button>
+              <button mat-menu-item>Assign Leave</button>
+            </mat-menu>
+
+            <mat-menu #entitlements="matMenu">
+              <button mat-menu-item>Add Entitlements</button>
+              <button mat-menu-item>Employee Entitlements</button>
+              <button mat-menu-item>My Entitlements</button>
+            </mat-menu>
+
+            <mat-menu #ereports="matMenu">
+                <button mat-menu-item>Leave Entitlements and Usagereports</button>
+                <button mat-menu-item>My Leave Entitlements and Usagereports</button>
+              </mat-menu>
+
+            <mat-menu #ecofigure="matMenu">
+                <button mat-menu-item>Leave Period</button>
+                <button mat-menu-item>Leave Type</button>
+                <button mat-menu-item>Work Week</button>
+                <button mat-menu-item>Holidays</button>
+              </mat-menu>
+          
+            <mat-list-item [matMenuTriggerFor]="pim">
+                <span class="full-width" *ngIf="isExpanded || isShowing">PIM</span>
+        <mat-icon mat-list-icon>assessment</mat-icon>
+            </mat-list-item>
+            <mat-menu #pim="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="configuration">Configuration</button>
+              <button mat-menu-item >Employee List</button>
+              <button mat-menu-item >Add Employee</button>
+              <button mat-menu-item >Reports</button>
+            </mat-menu>
+          
+            <mat-menu #configuration="matMenu">
+              <button mat-menu-item>Optional Fields</button>
+              <button mat-menu-item>Custom Fields</button> 
+              <button mat-menu-item>Data Import</button> 
+              <button mat-menu-item>Reporting Method</button> 
+              <button mat-menu-item>Terimantion Reasons</button> 
+            </mat-menu>
+            
+            <mat-list-item [matMenuTriggerFor]="time">
+              <span class="full-width" *ngIf="isExpanded || isShowing">Time</span>
+              <mat-icon mat-list-icon>schedule</mat-icon>
+          </mat-list-item>
+          <mat-menu #time="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="timesheets">Timesheets</button>
+            <button mat-menu-item [matMenuTriggerFor]="tattendance">Attendance</button>
+            <button mat-menu-item [matMenuTriggerFor]="treports">Report</button>
+            <button mat-menu-item [matMenuTriggerFor]="tproject">Project Info</button>
+          </mat-menu>
+          <mat-menu #timesheets="matMenu">
+              <button mat-menu-item>My timesheets</button>
+              <button mat-menu-item>Employee timesheets</button>  
+            </mat-menu>
+            <mat-menu #tattendance="matMenu">
+                <button mat-menu-item>My Records</button>
+                <button mat-menu-item>Punch In/Out</button>  
+                <button mat-menu-item>Employee Records</button>  
+                <button mat-menu-item>Configuration</button>  
+              </mat-menu>
+              <mat-menu #treports="matMenu">
+                  <button mat-menu-item>Project Reports</button>
+                  <button mat-menu-item>Employee Reports</button> 
+                  <button mat-menu-item>Attendance Summary</button>  
+                </mat-menu>
+                <mat-menu #tproject="matMenu">
+                    <button mat-menu-item>Customers</button>
+                    <button mat-menu-item>Projectsss</button> 
+                  </mat-menu>
+          
+            <a mat-list-item routerLink="/login">
+              <!-- <i class="material-icons">
+                  account_circle
+                  </i> <span class="nav-caption">My info</span> -->
+                  <span class="full-width" *ngIf="isExpanded || isShowing">My info</span>
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+          </a>
+          
+          <mat-list-item [matMenuTriggerFor]="performance">
+            <!-- <i class="material-icons">
+                account_circle
+                </i>
+              <a matline>Performance</a> -->
+      <span class="full-width" *ngIf="isExpanded || isShowing">Performance</span>
+        <mat-icon mat-list-icon>account_circle</mat-icon>
+          </mat-list-item>
+          <mat-menu #performance="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="reviews">Manage Reviews</button>
+            <button mat-menu-item>My Trackers</button>
+            <button mat-menu-item>Employee Trackers</button>
+          </mat-menu>
+          
+          <mat-menu #reviews="matMenu">
+            <button mat-menu-item>My Reviews</button>
+            <button mat-menu-item>Review list</button>
+          </mat-menu>
+          
+          <a mat-list-item routerLink="#">
+              <span class="full-width" *ngIf="isExpanded || isShowing">Directory</span>
+              <mat-icon mat-list-icon>account_circle</mat-icon>  
+          </a>
+           
+            </mat-nav-list>
+  </mat-sidenav>
+
+<div class="myleave">
+<div class="card shadow p-3 mb-5 bg-white rounded">
+  <div align="center" class="card-title">My Profile</div>
+  <div class="card-body">
+
+    <mat-tab-group>
+      <mat-tab label="Personal Details">
+        <div class="personal">
+        <div class="profilepic">
+            <input-file fileAccept="image/*" fileLimit="1" placeholder="Profile Picture"></input-file>
+        </div> 
+         
+        <div class="personal-form">
+          <h3>Personal Information</h3>
+        <div class="row">
+            <div class="col-md-4 col-xs-12 col-sm-12">
+              <div class="form-group">
+                  <input [disabled]="selectDisabled" type="text" class="form-control" placeholder="First Name *" name="firstname" id="firstname" value="" required/>
+              </div>
+            </div>
+            <div  class="col-md-4  col-xs-12 col-sm-12">
+              <div class="form-group">
+                <input [disabled]="selectDisabled" type="text" class="form-control" placeholder="Middle Name " name="middlename"  id="middlename" value=""/>
+            </div>
+          </div>
+          <div class="col-md-4  col-xs-12 col-sm-12">
+              <div class="form-group">
+                  <input [disabled]="selectDisabled" type="text" class="form-control" placeholder="Last Name *" name="lastname" id="lastname" value="" required/>
+              </div>
+          </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6 col-xs-12 col-sm-12">
+                <div class="form-group">
+                    <input [disabled]="selectDisabled" type="text" class="form-control" placeholder="Employee ID *" name="empid" id="empid" value="" required/>
+                </div>
+              </div>
+              <div  class="col-md-6  col-xs-12 col-sm-12">
+                <div class="form-group">
+                  <input [disabled]="selectDisabled" type="text" class="form-control" pattern="([a-zA-Z]{5})(\d{4})([a-zA-Z]{1}" title="Enter valid pancard Number" placeholder="PanCard Number*" name="pan"  id="pan" value=""/>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-md-6 col-xs-12 col-sm-12">
+                <div class="form-group">
+                    <input [disabled]="selectDisabled" type="text" class="form-control" pattern="^([A-Z]\d{2}-\d{2}-\d{6}$)" title="Enter valid DrivingLicense Number" placeholder="Driving License*" name="dl" id="dl" value="" required/>
+                </div>
+              </div>
+              <div  class="col-md-6  col-xs-12 col-sm-12">
+                  <div class="form-group">
+                      <input [disabled]="selectDisabled" type="date" class="form-control" name="dl-exp" id="dl-exp" data-placeholder="DL expiry date *" value="" required/>
+                  </div>
+            </div>
+          </div>
+
+      <div class="row">
+        <div class="col-md-6 col-xs-12 col-sm-12">
+          <div class="form-group">
+              <div class="radio-title">
+                  Gender
+                  <label class="radio-inline">
+                    <input [disabled]="selectDisabled" type="radio" name="option" value="male" id="option" required>Male
+                  </label>
+                  <label class="radio-inline">
+                    <input [disabled]="selectDisabled" type="radio" name="option" value="female" id="option">Female
+                  </label>
+                </div>
+          </div>
+        </div>
+        <div class="col-md-6  col-xs-12 col-sm-12">
+            <div class="form-group">
+                    <select [disabled]="selectDisabled" class="form-control" required>
+                        <option>Martial Status</option>
+                      <option>Single</option>
+                      <option>Married</option>
+                      <option>Other</option>
+                    </select>
+            </div>
+          </div>
+     </div>
+
+     <div class="row">
+      <div class="col-md-6 col-xs-12 col-sm-12">
+        <div class="form-group">
+          <select [disabled]="selectDisabled" class="form-control" required>
+              <option value="">Select Nationality</option>
+              <option value="AF">Afghanistan</option>
+              <option value="AL">Albania</option>
+              <option value="DZ">Algeria</option>
+              <option value="AS">American Samoa</option>
+              <option value="AD">Andorra</option>
+              <option value="AG">Angola</option>
+              <option value="AI">Anguilla</option>
+              <option value="AG">Antigua &amp; Barbuda</option>
+              <option value="AR">Argentina</option>
+              <option value="AA">Armenia</option>
+              <option value="AW">Aruba</option>
+              <option value="AU">Australia</option>
+              <option value="AT">Austria</option>
+              <option value="AZ">Azerbaijan</option>
+              <option value="BS">Bahamas</option>
+              <option value="BH">Bahrain</option>
+              <option value="BD">Bangladesh</option>
+              <option value="BB">Barbados</option>
+              <option value="BY">Belarus</option>
+              <option value="BE">Belgium</option>
+              <option value="BZ">Belize</option>
+              <option value="BJ">Benin</option>
+              <option value="BM">Bermuda</option>
+              <option value="BT">Bhutan</option>
+              <option value="BO">Bolivia</option>
+              <option value="BL">Bonaire</option>
+              <option value="BA">Bosnia &amp; Herzegovina</option>
+              <option value="BW">Botswana</option>
+              <option value="BR">Brazil</option>
+              <option value="BC">British Indian Ocean Ter</option>
+              <option value="BN">Brunei</option>
+              <option value="BG">Bulgaria</option>
+              <option value="BF">Burkina Faso</option>
+              <option value="BI">Burundi</option>
+              <option value="KH">Cambodia</option>
+              <option value="CM">Cameroon</option>
+              <option value="CA">Canada</option>
+              <option value="IC">Canary Islands</option>
+              <option value="CV">Cape Verde</option>
+              <option value="KY">Cayman Islands</option>
+              <option value="CF">Central African Republic</option>
+              <option value="TD">Chad</option>
+              <option value="CD">Channel Islands</option>
+              <option value="CL">Chile</option>
+              <option value="CN">China</option>
+              <option value="CI">Christmas Island</option>
+              <option value="CS">Cocos Island</option>
+              <option value="CO">Colombia</option>
+              <option value="CC">Comoros</option>
+              <option value="CG">Congo</option>
+              <option value="CK">Cook Islands</option>
+              <option value="CR">Costa Rica</option>
+              <option value="CT">Cote D'Ivoire</option>
+              <option value="HR">Croatia</option>
+              <option value="CU">Cuba</option>
+              <option value="CB">Curacao</option>
+              <option value="CY">Cyprus</option>
+              <option value="CZ">Czech Republic</option>
+              <option value="DK">Denmark</option>
+              <option value="DJ">Djibouti</option>
+              <option value="DM">Dominica</option>
+              <option value="DO">Dominican Republic</option>
+              <option value="TM">East Timor</option>
+              <option value="EC">Ecuador</option>
+              <option value="EG">Egypt</option>
+              <option value="SV">El Salvador</option>
+              <option value="GQ">Equatorial Guinea</option>
+              <option value="ER">Eritrea</option>
+              <option value="EE">Estonia</option>
+              <option value="ET">Ethiopia</option>
+              <option value="FA">Falkland Islands</option>
+              <option value="FO">Faroe Islands</option>
+              <option value="FJ">Fiji</option>
+              <option value="FI">Finland</option>
+              <option value="FR">France</option>
+              <option value="GF">French Guiana</option>
+              <option value="PF">French Polynesia</option>
+              <option value="FS">French Southern Ter</option>
+              <option value="GA">Gabon</option>
+              <option value="GM">Gambia</option>
+              <option value="GE">Georgia</option>
+              <option value="DE">Germany</option>
+              <option value="GH">Ghana</option>
+              <option value="GI">Gibraltar</option>
+              <option value="GB">Great Britain</option>
+              <option value="GR">Greece</option>
+              <option value="GL">Greenland</option>
+              <option value="GD">Grenada</option>
+              <option value="GP">Guadeloupe</option>
+              <option value="GU">Guam</option>
+              <option value="GT">Guatemala</option>
+              <option value="GN">Guinea</option>
+              <option value="GY">Guyana</option>
+              <option value="HT">Haiti</option>
+              <option value="HW">Hawaii</option>
+              <option value="HN">Honduras</option>
+              <option value="HK">Hong Kong</option>
+              <option value="HU">Hungary</option>
+              <option value="IS">Iceland</option>
+              <option value="IN">India</option>
+              <option value="ID">Indonesia</option>
+              <option value="IA">Iran</option>
+              <option value="IQ">Iraq</option>
+              <option value="IR">Ireland</option>
+              <option value="IM">Isle of Man</option>
+              <option value="IL">Israel</option>
+              <option value="IT">Italy</option>
+              <option value="JM">Jamaica</option>
+              <option value="JP">Japan</option>
+              <option value="JO">Jordan</option>
+              <option value="KZ">Kazakhstan</option>
+              <option value="KE">Kenya</option>
+              <option value="KI">Kiribati</option>
+              <option value="NK">Korea North</option>
+              <option value="KS">Korea South</option>
+              <option value="KW">Kuwait</option>
+              <option value="KG">Kyrgyzstan</option>
+              <option value="LA">Laos</option>
+              <option value="LV">Latvia</option>
+              <option value="LB">Lebanon</option>
+              <option value="LS">Lesotho</option>
+              <option value="LR">Liberia</option>
+              <option value="LY">Libya</option>
+              <option value="LI">Liechtenstein</option>
+              <option value="LT">Lithuania</option>
+              <option value="LU">Luxembourg</option>
+              <option value="MO">Macau</option>
+              <option value="MK">Macedonia</option>
+              <option value="MG">Madagascar</option>
+              <option value="MY">Malaysia</option>
+              <option value="MW">Malawi</option>
+              <option value="MV">Maldives</option>
+              <option value="ML">Mali</option>
+              <option value="MT">Malta</option>
+              <option value="MH">Marshall Islands</option>
+              <option value="MQ">Martinique</option>
+              <option value="MR">Mauritania</option>
+              <option value="MU">Mauritius</option>
+              <option value="ME">Mayotte</option>
+              <option value="MX">Mexico</option>
+              <option value="MI">Midway Islands</option>
+              <option value="MD">Moldova</option>
+              <option value="MC">Monaco</option>
+              <option value="MN">Mongolia</option>
+              <option value="MS">Montserrat</option>
+              <option value="MA">Morocco</option>
+              <option value="MZ">Mozambique</option>
+              <option value="MM">Myanmar</option>
+              <option value="NA">Nambia</option>
+              <option value="NU">Nauru</option>
+              <option value="NP">Nepal</option>
+              <option value="AN">Netherland Antilles</option>
+              <option value="NL">Netherlands (Holland, Europe)</option>
+              <option value="NV">Nevis</option>
+              <option value="NC">New Caledonia</option>
+              <option value="NZ">New Zealand</option>
+              <option value="NI">Nicaragua</option>
+              <option value="NE">Niger</option>
+              <option value="NG">Nigeria</option>
+              <option value="NW">Niue</option>
+              <option value="NF">Norfolk Island</option>
+              <option value="NO">Norway</option>
+              <option value="OM">Oman</option>
+              <option value="PK">Pakistan</option>
+              <option value="PW">Palau Island</option>
+              <option value="PS">Palestine</option>
+              <option value="PA">Panama</option>
+              <option value="PG">Papua New Guinea</option>
+              <option value="PY">Paraguay</option>
+              <option value="PE">Peru</option>
+              <option value="PH">Philippines</option>
+              <option value="PO">Pitcairn Island</option>
+              <option value="PL">Poland</option>
+              <option value="PT">Portugal</option>
+              <option value="PR">Puerto Rico</option>
+              <option value="QA">Qatar</option>
+              <option value="ME">Republic of Montenegro</option>
+              <option value="RS">Republic of Serbia</option>
+              <option value="RE">Reunion</option>
+              <option value="RO">Romania</option>
+              <option value="RU">Russia</option>
+              <option value="RW">Rwanda</option>
+              <option value="NT">St Barthelemy</option>
+              <option value="EU">St Eustatius</option>
+              <option value="HE">St Helena</option>
+              <option value="KN">St Kitts-Nevis</option>
+              <option value="LC">St Lucia</option>
+              <option value="MB">St Maarten</option>
+              <option value="PM">St Pierre &amp; Miquelon</option>
+              <option value="VC">St Vincent &amp; Grenadines</option>
+              <option value="SP">Saipan</option>
+              <option value="SO">Samoa</option>
+              <option value="AS">Samoa American</option>
+              <option value="SM">San Marino</option>
+              <option value="ST">Sao Tome &amp; Principe</option>
+              <option value="SA">Saudi Arabia</option>
+              <option value="SN">Senegal</option>
+              <option value="RS">Serbia</option>
+              <option value="SC">Seychelles</option>
+              <option value="SL">Sierra Leone</option>
+              <option value="SG">Singapore</option>
+              <option value="SK">Slovakia</option>
+              <option value="SI">Slovenia</option>
+              <option value="SB">Solomon Islands</option>
+              <option value="OI">Somalia</option>
+              <option value="ZA">South Africa</option>
+              <option value="ES">Spain</option>
+              <option value="LK">Sri Lanka</option>
+              <option value="SD">Sudan</option>
+              <option value="SR">Suriname</option>
+              <option value="SZ">Swaziland</option>
+              <option value="SE">Sweden</option>
+              <option value="CH">Switzerland</option>
+              <option value="SY">Syria</option>
+              <option value="TA">Tahiti</option>
+              <option value="TW">Taiwan</option>
+              <option value="TJ">Tajikistan</option>
+              <option value="TZ">Tanzania</option>
+              <option value="TH">Thailand</option>
+              <option value="TG">Togo</option>
+              <option value="TK">Tokelau</option>
+              <option value="TO">Tonga</option>
+              <option value="TT">Trinidad &amp; Tobago</option>
+              <option value="TN">Tunisia</option>
+              <option value="TR">Turkey</option>
+              <option value="TU">Turkmenistan</option>
+              <option value="TC">Turks &amp; Caicos Is</option>
+              <option value="TV">Tuvalu</option>
+              <option value="UG">Uganda</option>
+              <option value="UA">Ukraine</option>
+              <option value="AE">United Arab Emirates</option>
+              <option value="GB">United Kingdom</option>
+              <option value="US">United States of America</option>
+              <option value="UY">Uruguay</option>
+              <option value="UZ">Uzbekistan</option>
+              <option value="VU">Vanuatu</option>
+              <option value="VS">Vatican City State</option>
+              <option value="VE">Venezuela</option>
+              <option value="VN">Vietnam</option>
+              <option value="VB">Virgin Islands (Brit)</option>
+              <option value="VA">Virgin Islands (USA)</option>
+              <option value="WK">Wake Island</option>
+              <option value="WF">Wallis &amp; Futana Is</option>
+              <option value="YE">Yemen</option>
+              <option value="ZR">Zaire</option>
+              <option value="ZM">Zambia</option>
+              <option value="ZW">Zimbabwe</option>
+          </select>
+  </div>
+      </div>
+      <div class="col-md-6  col-xs-12 col-sm-12">
+        <div class="form-group">
+          <input [disabled]="selectDisabled" type="date" class="form-control" name="dob" id="dob" data-placeholder="Date of Birth *" value="" required/>
+      </div>
+        </div>
+   </div>
+  
+  <button class="btn btn-success" (click)="selectDisabled = !selectDisabled">{{selectDisabled?'Edit': 'Save'}}</button>
+</div>
+
+<hr>
+
+<!-- other info -->
+<div class="other-form">
+    <h3>Other Information</h3>
+  <div class="row">
+      <div class="col-md-6 col-xs-12 col-sm-12">
+        <div class="form-group">
+            <input [disabled]="Disabled" type="text" class="form-control" placeholder="Account Number *" name="accnum" id="accnum" value="" required/>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-12 col-sm-12">
+          <div class="form-group">
+              <input [disabled]="Disabled" type="text" class="form-control" placeholder="Bank *" name="bank" id="bank" value="" required/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+          <div class="col-md-6 col-xs-12 col-sm-12">
+            <div class="form-group">
+                <input [disabled]="Disabled" type="text" class="form-control" placeholder="IFSC Code *" name="ifsc" id="ifsc" value="" required/>
+            </div>
+          </div>
+        </div>
+
+
+<button class="btn btn-success" (click)="Disabled = !Disabled">{{selectDisabled?'Edit': 'Save'}}</button>
+</div>
+<!-- other info -->
+<hr>
+<!-- attachment -->
+<div class="attachmnt-form">
+    <h3>Attachments</h3>
+
+<div *ngIf="!showMainContent">
+<label for="singleFile">Upload file</label>
+<input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+
+<mat-file-upload-queue #fileUploadQueue
+    [fileAlias]="'file'"
+    [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+ 
+    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+</mat-file-upload-queue>
+  <div class="form-group shadow-textarea">
+      <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+    </div>
+
+    <button class="btn btn-success">Upload</button>
+    <button (click)="ShowHideButton()" class="btn btn-danger">Cancel</button>
+</div>
+<div *ngIf="showMainContent">
+  <button (click)="ShowHideButton()" class="btn btn-success">Add</button>
+</div>
+
+</div>
+<!-- attachment -->
+
+</div>
+
+      </mat-tab>
+
+      <mat-tab label="Contact Details"> 
+          <div class="contact-form">
+              <h3>Contact Information</h3>
+
+                <div class="form-group row">
+                    <label for="street1" class="col-sm-2 col-form-label">Address Street 1</label>
+                    <div class="col-sm-6">
+                      <input [disabled]="contact" type="text" class="form-control" id="street1" placeholder="">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                      <label for="street2" class="col-sm-2 col-form-label">Address Street 2</label>
+                      <div class="col-sm-6">
+                        <input [disabled]="contact" type="text" class="form-control" id="street2" placeholder="">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="city" class="col-sm-2 col-form-label">City</label>
+                        <div class="col-sm-6">
+                          <input [disabled]="contact" type="text" class="form-control" id="city" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="state" class="col-sm-2 col-form-label">State/Province</label>
+                        <div class="col-sm-6">
+                          <input [disabled]="contact" type="text" class="form-control" id="state" placeholder="">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="zip" class="col-sm-2 col-form-label">Zip/PostalCode</label>
+                        <div class="col-sm-6">
+                          <input [disabled]="contact" type="text" class="form-control" id="zip" placeholder="">
+                        </div>
+                    </div>
+
+                  <div class="form-group row">
+                      <label for="country" class="col-sm-2 col-form-label">Country</label>
+                      <div class="col-sm-6">
+                      <select [disabled]="contact" class="form-control" id="country" required>
+                          <option value="AF">Select a Country</option>
+                            <option value="AF">Afghanistan</option>
+                            <option value="AL">Albania</option>
+                            <option value="DZ">Algeria</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AD">Andorra</option>
+                            <option value="AG">Angola</option>
+                            <option value="AI">Anguilla</option>
+                            <option value="AG">Antigua &amp; Barbuda</option>
+                            <option value="AR">Argentina</option>
+                            <option value="AA">Armenia</option>
+                            <option value="AW">Aruba</option>
+                            <option value="AU">Australia</option>
+                            <option value="AT">Austria</option>
+                            <option value="AZ">Azerbaijan</option>
+                            <option value="BS">Bahamas</option>
+                            <option value="BH">Bahrain</option>
+                            <option value="BD">Bangladesh</option>
+                            <option value="BB">Barbados</option>
+                            <option value="BY">Belarus</option>
+                            <option value="BE">Belgium</option>
+                            <option value="BZ">Belize</option>
+                            <option value="BJ">Benin</option>
+                            <option value="BM">Bermuda</option>
+                            <option value="BT">Bhutan</option>
+                            <option value="BO">Bolivia</option>
+                            <option value="BL">Bonaire</option>
+                            <option value="BA">Bosnia &amp; Herzegovina</option>
+                            <option value="BW">Botswana</option>
+                            <option value="BR">Brazil</option>
+                            <option value="BC">British Indian Ocean Ter</option>
+                            <option value="BN">Brunei</option>
+                            <option value="BG">Bulgaria</option>
+                            <option value="BF">Burkina Faso</option>
+                            <option value="BI">Burundi</option>
+                            <option value="KH">Cambodia</option>
+                            <option value="CM">Cameroon</option>
+                            <option value="CA">Canada</option>
+                            <option value="IC">Canary Islands</option>
+                            <option value="CV">Cape Verde</option>
+                            <option value="KY">Cayman Islands</option>
+                            <option value="CF">Central African Republic</option>
+                            <option value="TD">Chad</option>
+                            <option value="CD">Channel Islands</option>
+                            <option value="CL">Chile</option>
+                            <option value="CN">China</option>
+                            <option value="CI">Christmas Island</option>
+                            <option value="CS">Cocos Island</option>
+                            <option value="CO">Colombia</option>
+                            <option value="CC">Comoros</option>
+                            <option value="CG">Congo</option>
+                            <option value="CK">Cook Islands</option>
+                            <option value="CR">Costa Rica</option>
+                            <option value="CT">Cote D'Ivoire</option>
+                            <option value="HR">Croatia</option>
+                            <option value="CU">Cuba</option>
+                            <option value="CB">Curacao</option>
+                            <option value="CY">Cyprus</option>
+                            <option value="CZ">Czech Republic</option>
+                            <option value="DK">Denmark</option>
+                            <option value="DJ">Djibouti</option>
+                            <option value="DM">Dominica</option>
+                            <option value="DO">Dominican Republic</option>
+                            <option value="TM">East Timor</option>
+                            <option value="EC">Ecuador</option>
+                            <option value="EG">Egypt</option>
+                            <option value="SV">El Salvador</option>
+                            <option value="GQ">Equatorial Guinea</option>
+                            <option value="ER">Eritrea</option>
+                            <option value="EE">Estonia</option>
+                            <option value="ET">Ethiopia</option>
+                            <option value="FA">Falkland Islands</option>
+                            <option value="FO">Faroe Islands</option>
+                            <option value="FJ">Fiji</option>
+                            <option value="FI">Finland</option>
+                            <option value="FR">France</option>
+                            <option value="GF">French Guiana</option>
+                            <option value="PF">French Polynesia</option>
+                            <option value="FS">French Southern Ter</option>
+                            <option value="GA">Gabon</option>
+                            <option value="GM">Gambia</option>
+                            <option value="GE">Georgia</option>
+                            <option value="DE">Germany</option>
+                            <option value="GH">Ghana</option>
+                            <option value="GI">Gibraltar</option>
+                            <option value="GB">Great Britain</option>
+                            <option value="GR">Greece</option>
+                            <option value="GL">Greenland</option>
+                            <option value="GD">Grenada</option>
+                            <option value="GP">Guadeloupe</option>
+                            <option value="GU">Guam</option>
+                            <option value="GT">Guatemala</option>
+                            <option value="GN">Guinea</option>
+                            <option value="GY">Guyana</option>
+                            <option value="HT">Haiti</option>
+                            <option value="HW">Hawaii</option>
+                            <option value="HN">Honduras</option>
+                            <option value="HK">Hong Kong</option>
+                            <option value="HU">Hungary</option>
+                            <option value="IS">Iceland</option>
+                            <option value="IN">India</option>
+                            <option value="ID">Indonesia</option>
+                            <option value="IA">Iran</option>
+                            <option value="IQ">Iraq</option>
+                            <option value="IR">Ireland</option>
+                            <option value="IM">Isle of Man</option>
+                            <option value="IL">Israel</option>
+                            <option value="IT">Italy</option>
+                            <option value="JM">Jamaica</option>
+                            <option value="JP">Japan</option>
+                            <option value="JO">Jordan</option>
+                            <option value="KZ">Kazakhstan</option>
+                            <option value="KE">Kenya</option>
+                            <option value="KI">Kiribati</option>
+                            <option value="NK">Korea North</option>
+                            <option value="KS">Korea South</option>
+                            <option value="KW">Kuwait</option>
+                            <option value="KG">Kyrgyzstan</option>
+                            <option value="LA">Laos</option>
+                            <option value="LV">Latvia</option>
+                            <option value="LB">Lebanon</option>
+                            <option value="LS">Lesotho</option>
+                            <option value="LR">Liberia</option>
+                            <option value="LY">Libya</option>
+                            <option value="LI">Liechtenstein</option>
+                            <option value="LT">Lithuania</option>
+                            <option value="LU">Luxembourg</option>
+                            <option value="MO">Macau</option>
+                            <option value="MK">Macedonia</option>
+                            <option value="MG">Madagascar</option>
+                            <option value="MY">Malaysia</option>
+                            <option value="MW">Malawi</option>
+                            <option value="MV">Maldives</option>
+                            <option value="ML">Mali</option>
+                            <option value="MT">Malta</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MQ">Martinique</option>
+                            <option value="MR">Mauritania</option>
+                            <option value="MU">Mauritius</option>
+                            <option value="ME">Mayotte</option>
+                            <option value="MX">Mexico</option>
+                            <option value="MI">Midway Islands</option>
+                            <option value="MD">Moldova</option>
+                            <option value="MC">Monaco</option>
+                            <option value="MN">Mongolia</option>
+                            <option value="MS">Montserrat</option>
+                            <option value="MA">Morocco</option>
+                            <option value="MZ">Mozambique</option>
+                            <option value="MM">Myanmar</option>
+                            <option value="NA">Nambia</option>
+                            <option value="NU">Nauru</option>
+                            <option value="NP">Nepal</option>
+                            <option value="AN">Netherland Antilles</option>
+                            <option value="NL">Netherlands (Holland, Europe)</option>
+                            <option value="NV">Nevis</option>
+                            <option value="NC">New Caledonia</option>
+                            <option value="NZ">New Zealand</option>
+                            <option value="NI">Nicaragua</option>
+                            <option value="NE">Niger</option>
+                            <option value="NG">Nigeria</option>
+                            <option value="NW">Niue</option>
+                            <option value="NF">Norfolk Island</option>
+                            <option value="NO">Norway</option>
+                            <option value="OM">Oman</option>
+                            <option value="PK">Pakistan</option>
+                            <option value="PW">Palau Island</option>
+                            <option value="PS">Palestine</option>
+                            <option value="PA">Panama</option>
+                            <option value="PG">Papua New Guinea</option>
+                            <option value="PY">Paraguay</option>
+                            <option value="PE">Peru</option>
+                            <option value="PH">Philippines</option>
+                            <option value="PO">Pitcairn Island</option>
+                            <option value="PL">Poland</option>
+                            <option value="PT">Portugal</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="QA">Qatar</option>
+                            <option value="ME">Republic of Montenegro</option>
+                            <option value="RS">Republic of Serbia</option>
+                            <option value="RE">Reunion</option>
+                            <option value="RO">Romania</option>
+                            <option value="RU">Russia</option>
+                            <option value="RW">Rwanda</option>
+                            <option value="NT">St Barthelemy</option>
+                            <option value="EU">St Eustatius</option>
+                            <option value="HE">St Helena</option>
+                            <option value="KN">St Kitts-Nevis</option>
+                            <option value="LC">St Lucia</option>
+                            <option value="MB">St Maarten</option>
+                            <option value="PM">St Pierre &amp; Miquelon</option>
+                            <option value="VC">St Vincent &amp; Grenadines</option>
+                            <option value="SP">Saipan</option>
+                            <option value="SO">Samoa</option>
+                            <option value="AS">Samoa American</option>
+                            <option value="SM">San Marino</option>
+                            <option value="ST">Sao Tome &amp; Principe</option>
+                            <option value="SA">Saudi Arabia</option>
+                            <option value="SN">Senegal</option>
+                            <option value="RS">Serbia</option>
+                            <option value="SC">Seychelles</option>
+                            <option value="SL">Sierra Leone</option>
+                            <option value="SG">Singapore</option>
+                            <option value="SK">Slovakia</option>
+                            <option value="SI">Slovenia</option>
+                            <option value="SB">Solomon Islands</option>
+                            <option value="OI">Somalia</option>
+                            <option value="ZA">South Africa</option>
+                            <option value="ES">Spain</option>
+                            <option value="LK">Sri Lanka</option>
+                            <option value="SD">Sudan</option>
+                            <option value="SR">Suriname</option>
+                            <option value="SZ">Swaziland</option>
+                            <option value="SE">Sweden</option>
+                            <option value="CH">Switzerland</option>
+                            <option value="SY">Syria</option>
+                            <option value="TA">Tahiti</option>
+                            <option value="TW">Taiwan</option>
+                            <option value="TJ">Tajikistan</option>
+                            <option value="TZ">Tanzania</option>
+                            <option value="TH">Thailand</option>
+                            <option value="TG">Togo</option>
+                            <option value="TK">Tokelau</option>
+                            <option value="TO">Tonga</option>
+                            <option value="TT">Trinidad &amp; Tobago</option>
+                            <option value="TN">Tunisia</option>
+                            <option value="TR">Turkey</option>
+                            <option value="TU">Turkmenistan</option>
+                            <option value="TC">Turks &amp; Caicos Is</option>
+                            <option value="TV">Tuvalu</option>
+                            <option value="UG">Uganda</option>
+                            <option value="UA">Ukraine</option>
+                            <option value="AE">United Arab Emirates</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="US">United States of America</option>
+                            <option value="UY">Uruguay</option>
+                            <option value="UZ">Uzbekistan</option>
+                            <option value="VU">Vanuatu</option>
+                            <option value="VS">Vatican City State</option>
+                            <option value="VE">Venezuela</option>
+                            <option value="VN">Vietnam</option>
+                            <option value="VB">Virgin Islands (Brit)</option>
+                            <option value="VA">Virgin Islands (USA)</option>
+                            <option value="WK">Wake Island</option>
+                            <option value="WF">Wallis &amp; Futana Is</option>
+                            <option value="YE">Yemen</option>
+                            <option value="ZR">Zaire</option>
+                            <option value="ZM">Zambia</option>
+                            <option value="ZW">Zimbabwe</option>
+                        </select>
+                      </div>
+                </div>
+
+<div class="form-group row">
+    <label for="home" class="col-sm-2 col-form-label">Home Telephone</label>
+    <div class="col-sm-6">
+      <input [disabled]="contact" type="tel" class="form-control" id="home" placeholder="">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
+    <div class="col-sm-6">
+      <input [disabled]="contact" type="tel" class="form-control" id="mobile" placeholder="">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="work" class="col-sm-2 col-form-label">Work Telephone</label>
+    <div class="col-sm-6">
+      <input [disabled]="contact" type="tel" class="form-control" id="work" placeholder="">
+    </div>
+</div>
+
+<div class="form-group row">
+    <label for="workemail" class="col-sm-2 col-form-label">Work Email</label>
+    <div class="col-sm-6">
+      <input [disabled]="contact" type="email" class="form-control" id="workemail" placeholder="">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="otheremail" class="col-sm-2 col-form-label">Other Email</label>
+    <div class="col-sm-6">
+      <input [disabled]="contact" type="email" class="form-control" id="otheremail" placeholder="">
+    </div>
+</div>
+
+      <button class="btn btn-success" (click)="contact = !contact">{{contact?'Edit': 'Save'}}</button>
+    </div>
+    <hr>
+<!-- attachment -->
+<div class="attachmnt-form">
+    <h3>Attachments</h3>
+
+<div *ngIf="!show">
+<label for="singleFile">Upload file</label>
+<input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+
+<mat-file-upload-queue #fileUploadQueue
+    [fileAlias]="'file'"
+    [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+ 
+    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+</mat-file-upload-queue>
+  <div class="form-group shadow-textarea">
+      <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+    </div>
+
+    <button class="btn btn-success">Upload</button>
+    <button (click)="ShowContact()" class="btn btn-danger">Cancel</button>
+</div>
+<div *ngIf="show">
+  <button (click)="ShowContact()" class="btn btn-success">Add</button>
+</div>
+
+</div>
+<!-- attachment -->
+
+      </mat-tab>
+
+      <mat-tab label="Emergency Contacts"> 
+          <h3>Assigned Emergency Contacts</h3>
+      <!-- emergency -->
+      <div class="add-emergency">
+      
+      <div *ngIf="!addemergency">
+          <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="name" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="relation" class="col-sm-2 col-form-label">Relation</label>
+              <div class="col-sm-6">
+              <select [disabled]="contact" class="form-control" id="relation" required>
+                  <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="children">Children</option> 
+                    <option value="husband">Husband</option>
+                    <option value="other">Other</option>
+                </select>
+              </div>
+        </div>
+            <div class="form-group row">
+                <label for="home" class="col-sm-2 col-form-label">Home Telephone</label>
+                <div class="col-sm-6">
+                  <input type="tel" class="form-control" id="home" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="mobile" class="col-sm-2 col-form-label">Mobile</label>
+                <div class="col-sm-6">
+                  <input type="tel" class="form-control" id="mobile" placeholder="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="work" class="col-sm-2 col-form-label">Work Telephone</label>
+                <div class="col-sm-6">
+                  <input type="tel" class="form-control" id="work" placeholder="">
+                </div>
+            </div>
+      
+          <button class="btn btn-success">Save</button>
+          <button (click)="AddEmergency()" class="btn btn-danger">Cancel</button>
+      </div>
+      <div *ngIf="addemergency">
+        <button (click)="AddEmergency()" class="btn btn-success">Add</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+      
+      </div>
+      <!-- emergency -->
+<hr>
+          <app-table></app-table>
+
+    <hr>
+        <!-- attachment -->
+<div class="attachmnt-form">
+    <h3>Attachments</h3>
+
+<div *ngIf="!emergency">
+<label for="singleFile">Upload file</label>
+<input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+
+<mat-file-upload-queue #fileUploadQueue
+    [fileAlias]="'file'"
+    [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+ 
+    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+</mat-file-upload-queue>
+  <div class="form-group shadow-textarea">
+      <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+    </div>
+
+    <button class="btn btn-success">Upload</button>
+    <button (click)="ShowEmergency()" class="btn btn-danger">Cancel</button>
+</div>
+<div *ngIf="emergency">
+  <button (click)="ShowEmergency()" class="btn btn-success">Add</button>
+</div>
+
+</div>
+<!-- attachment -->
+      </mat-tab>
+
+      <mat-tab label="Dependents">  
+          <h3>Dependents</h3>
+      <!-- dependents -->
+      <div class="add-dependents">
+      
+      <div *ngIf="!adddependents">
+          <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="name" placeholder="">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="relation" class="col-sm-2 col-form-label">Relation</label>
+              <div class="col-sm-6">
+              <select class="form-control" id="relation" required>
+                  <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="children">Children</option> 
+                    <option value="husband">Husband</option>
+                    <option value="other">Other</option>
+                </select>
+              </div>
+        </div>
+            <div class="form-group row">
+                <label for="date" class="col-sm-2 col-form-label">Date of Birth</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control" id="date" placeholder="">
+                </div>
+            </div>
+      
+          <button class="btn btn-success">Save</button>
+          <button (click)="AddDependents()" class="btn btn-danger">Cancel</button>
+      </div>
+      <div *ngIf="adddependents">
+        <button (click)="AddDependents()" class="btn btn-success">Add</button>
+        <button class="btn btn-danger">Delete</button>
+      </div>
+      
+      </div>
+      <!-- dependents -->
+<hr>
+          <app-table></app-table>
+
+    <hr>
+        <!-- attachment -->
+<div class="attachmnt-form">
+    <h3>Attachments</h3>
+
+<div *ngIf="!dependent">
+<label for="singleFile">Upload file</label>
+<input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+
+<mat-file-upload-queue #fileUploadQueue
+    [fileAlias]="'file'"
+    [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+ 
+    <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+</mat-file-upload-queue>
+  <div class="form-group shadow-textarea">
+      <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+    </div>
+
+    <button class="btn btn-success">Upload</button>
+    <button (click)="ShowDependents()" class="btn btn-danger">Cancel</button>
+</div>
+<div *ngIf="dependent">
+  <button (click)="ShowDependents()" class="btn btn-success">Add</button>
+</div>
+
+</div>
+<!-- attachment -->
+
+      </mat-tab>
+
+      <mat-tab label="Immigration"> 
+
+        <h3>Immigration Records</h3>
+        <!-- immigration -->
+        <div class="add-immigration">
+        
+        <div *ngIf="!addimmigration">
+            <label class="right-align">Document *</label>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="passport" value="option1">
+            <label class="form-check-label" for="passport">Passport</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="visa" value="option2">
+            <label class="form-check-label" for="visa">Visa</label>
+          </div>
+          <div class="form-group row">
+              <label for="number" class="col-sm-2 col-form-label">Number *</label>
+              <div class="col-sm-6">
+                <input type="number" class="form-control" id="number" placeholder="">
+              </div>
+          </div>
+          <div class="form-group row">
+            <label for="issue" class="col-sm-2 col-form-label">Issued Date *</label>
+            <div class="col-sm-6">
+              <input type="date" class="form-control" id="issue" placeholder="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="expiry" class="col-sm-2 col-form-label">Expiry Date *</label>
+            <div class="col-sm-6">
+              <input type="date" class="form-control" id="expiry" placeholder="">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="status" class="col-sm-2 col-form-label">Eligible Status*</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" id="status" placeholder="">
+            </div>
+        </div>
+            
+        <div class="form-group row">
+            <label for="issuedby" class="col-sm-2 col-form-label">Issued By *</label>
+            <div class="col-sm-6">
+            <select class="form-control" id="issuedby" required>
+                <option value="AF">Select a Country</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AG">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AG">Antigua &amp; Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AA">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia</option>
+                  <option value="BL">Bonaire</option>
+                  <option value="BA">Bosnia &amp; Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BR">Brazil</option>
+                  <option value="BC">British Indian Ocean Ter</option>
+                  <option value="BN">Brunei</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="IC">Canary Islands</option>
+                  <option value="CV">Cape Verde</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CD">Channel Islands</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CI">Christmas Island</option>
+                  <option value="CS">Cocos Island</option>
+                  <option value="CO">Colombia</option>
+                  <option value="CC">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="CT">Cote D'Ivoire</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CB">Curacao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="TM">East Timor</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FA">Falkland Islands</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="FS">French Southern Ter</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GB">Great Britain</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HW">Hawaii</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="IA">Iran</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IR">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="NK">Korea North</option>
+                  <option value="KS">Korea South</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Laos</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macau</option>
+                  <option value="MK">Macedonia</option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="ME">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="MI">Midway Islands</option>
+                  <option value="MD">Moldova</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Nambia</option>
+                  <option value="NU">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="AN">Netherland Antilles</option>
+                  <option value="NL">Netherlands (Holland, Europe)</option>
+                  <option value="NV">Nevis</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NW">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau Island</option>
+                  <option value="PS">Palestine</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PO">Pitcairn Island</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="ME">Republic of Montenegro</option>
+                  <option value="RS">Republic of Serbia</option>
+                  <option value="RE">Reunion</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russia</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="NT">St Barthelemy</option>
+                  <option value="EU">St Eustatius</option>
+                  <option value="HE">St Helena</option>
+                  <option value="KN">St Kitts-Nevis</option>
+                  <option value="LC">St Lucia</option>
+                  <option value="MB">St Maarten</option>
+                  <option value="PM">St Pierre &amp; Miquelon</option>
+                  <option value="VC">St Vincent &amp; Grenadines</option>
+                  <option value="SP">Saipan</option>
+                  <option value="SO">Samoa</option>
+                  <option value="AS">Samoa American</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome &amp; Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="OI">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SZ">Swaziland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syria</option>
+                  <option value="TA">Tahiti</option>
+                  <option value="TW">Taiwan</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad &amp; Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TR">Turkey</option>
+                  <option value="TU">Turkmenistan</option>
+                  <option value="TC">Turks &amp; Caicos Is</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States of America</option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VS">Vatican City State</option>
+                  <option value="VE">Venezuela</option>
+                  <option value="VN">Vietnam</option>
+                  <option value="VB">Virgin Islands (Brit)</option>
+                  <option value="VA">Virgin Islands (USA)</option>
+                  <option value="WK">Wake Island</option>
+                  <option value="WF">Wallis &amp; Futana Is</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZR">Zaire</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+              </select>
+            </div>
+      </div>
+              <div class="form-group row">
+                  <label for="reviewdate" class="col-sm-2 col-form-label">Eligible Review Date*</label>
+                  <div class="col-sm-6">
+                    <input type="date" class="form-control" id="reviewdate" placeholder="">
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Comments *</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+        
+            <button class="btn btn-success">Save</button>
+            <button (click)="AddImmigration()" class="btn btn-danger">Cancel</button>
+        </div>
+        <div *ngIf="addimmigration">
+          <button (click)="AddImmigration()" class="btn btn-success">Add</button>
+          <button class="btn btn-danger">Delete</button>
+        </div>
+        
+        </div>
+        <!-- immigration -->
+  <hr>
+            <app-table></app-table>
+  
+      <hr>
+          <!-- attachment -->
+  <div class="attachmnt-form">
+      <h3>Attachments</h3>
+  
+  <div *ngIf="!immigration">
+  <label for="singleFile">Upload file</label>
+  <input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+  
+  <mat-file-upload-queue #fileUploadQueue
+      [fileAlias]="'file'"
+      [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+   
+      <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+  </mat-file-upload-queue>
+    <div class="form-group shadow-textarea">
+        <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+      </div>
+  
+      <button class="btn btn-success">Upload</button>
+      <button (click)="ShowImmigration()" class="btn btn-danger">Cancel</button>
+  </div>
+  <div *ngIf="immigration">
+    <button (click)="ShowImmigration()" class="btn btn-success">Add</button>
+  </div>
+  
+  </div>
+  <!-- attachment -->
+
+      </mat-tab>
+
+      <mat-tab label="Job">
+
+        <div class="title-job">
+        <h3>Job</h3>
+      </div>
+
+        <div class="form-group row">
+            <label for="job-title" class="col-sm-2 col-form-label">Job Title</label>
+            <div class="col-sm-6">
+            <select class="form-control" id="job-title" disabled required>
+                <option value="father">Select</option>
+                  <option value="mother">SAP Consultant</option>
+                  <option value="children">ABAP</option> 
+              </select>
+            </div>
+        </div>
+
+      <div class="form-group row">
+          <label for="specification" class="col-sm-2 col-form-label">Job-Specification *</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" disabled id="specification" placeholder="">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="emp-status" class="col-sm-2 col-form-label">Employment-status *</label>
+          <div class="col-sm-6">
+          <select class="form-control" id="emp-status" disabled required>
+              <option value="father">Select</option>
+                <option value="mother">Fulltime</option>
+                <option value="children">Permanent</option> 
+            </select>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="job-category" class="col-sm-2 col-form-label">Job Category *</label>
+          <div class="col-sm-6">
+          <select class="form-control" id="job-category" disabled required>
+              <option value="father">Select</option>
+                <option value="mother">Fulltime</option>
+                <option value="children">Permanent</option> 
+            </select>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="joineddate" class="col-sm-2 col-form-label">Joining date *</label>
+          <div class="col-sm-6">
+            <input type="date"  disabled class="form-control" id="joineddate" placeholder="">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="subunit" class="col-sm-2 col-form-label">Sub Unit *</label>
+          <div class="col-sm-6">
+          <select class="form-control" id="subunit" disabled required>
+              <option value="father">Select</option>
+                <option value="mother">Fulltime</option>
+                <option value="children">Permanent</option> 
+            </select>
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="location" class="col-sm-2 col-form-label">Location *</label>
+          <div class="col-sm-6">
+          <select class="form-control" id="location" disabled required>
+              <option value="father">Select</option>
+                <option value="mother">Fulltime</option>
+                <option value="children">Permanent</option> 
+            </select>
+          </div>
+      </div>
+
+      <hr>
+
+      <h3>Employment Contract</h3>
+
+      <div class="form-group row">
+          <label for="startdate" class="col-sm-2 col-form-label">Start Date *</label>
+          <div class="col-sm-6">
+            <input type="date"  disabled class="form-control" id="startdate" placeholder="">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="enddate" class="col-sm-2 col-form-label">End Date *</label>
+          <div class="col-sm-6">
+            <input type="date"  disabled class="form-control" id="enddate" placeholder="">
+          </div>
+      </div>
+
+      <div class="form-group row">
+          <label for="contract" class="col-sm-2 col-form-label">Contract Details *</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control" disabled id="contract" placeholder="">
+          </div>
+      </div>
+
+      <hr>
+      <h3>Attachments</h3>
+
+      </mat-tab>
+
+      <mat-tab label="Report-To">
+       <div class="report">
+         <h3>Report-TO</h3>
+
+         <div class="supervisors">
+        <h3>Assigned Supervisors</h3>
+        <app-table></app-table>
+      </div>
+      
+       <hr>
+       <div class="subordinates">
+          <h3>Assigned Sub-Ordinates</h3>
+          <app-table></app-table>
+        </div>
+         <hr>
+           <div class="subordinates">
+          <h3>Attachments</h3>
+        </div>
+         </div>
+
+      </mat-tab>
+      <mat-tab label="Qualifications"> 
+
+        <div class="qualification">
+          <h3 class="qual">Work Expierience - Please mention all previous experiences</h3>
+        
+           <!-- company -->
+           <div class="work">
+              <h3>Add your Work Experience</h3>
+               
+          <div *ngIf="!work">
+
+              <div class="form-group row">
+                  <label for="company" class="col-sm-2 col-form-label">Company *</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="company" placeholder="">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label for="jt" class="col-sm-2 col-form-label">Job Title *</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="jt" placeholder="">
+                  </div>
+              </div>
+
+              <div class="form-group row">
+                  <label for="fromdate" class="col-sm-2 col-form-label">From Date *</label>
+                  <div class="col-sm-6">
+                    <input type="date" class="form-control" id="fromdate" placeholder="">
+                  </div>
+              </div>
+        
+              <div class="form-group row">
+                  <label for="todate" class="col-sm-2 col-form-label">To Date *</label>
+                  <div class="col-sm-6">
+                    <input type="date" class="form-control" id="todate" placeholder="">
+                  </div>
+              </div>
+            <div class="form-group shadow-textarea">
+                <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+              </div>
+          
+              <button class="btn btn-success">Upload</button>
+              <button (click)="ShowWork()" class="btn btn-danger">Cancel</button>
+          </div>
+          <div *ngIf="work">
+            <button (click)="ShowWork()" class="btn btn-success">Add</button>
+            <app-table></app-table>
+          </div>
+          
+          </div>
+         <!-- company -->
+
+         <!-- educationdetail -->
+         <div class="education">
+            <h3>Add your Education Details</h3>
+             
+        <div *ngIf="!education">
+
+            <div class="form-group row">
+                <label for="leveleducation" class="col-sm-2 col-form-label">Level *</label>
+                <div class="col-sm-6">
+                <select class="form-control" id="leveleducation" disabled required>
+                    <option>Select</option>
+                      <option value="mother">Bachelor of Computer Application</option>
+                      <option value="children">Bachelor of Technology</option> 
+                      <option value="children">Master of Business Administration</option> 
+                      <option value="children">Master of Computer Application</option> 
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="institute" class="col-sm-2 col-form-label">Institute *</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="institute" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="major" class="col-sm-2 col-form-label">Major/Specialization *</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="major" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="year" class="col-sm-2 col-form-label">Year *</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="year" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="gpa" class="col-sm-2 col-form-label">GPA/Score *</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="gpa" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fromdate" class="col-sm-2 col-form-label">Start Date *</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control" id="fromdate" placeholder="">
+                </div>
+            </div>
+      
+            <div class="form-group row">
+                <label for="todate" class="col-sm-2 col-form-label">End Date *</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control" id="todate" placeholder="">
+                </div>
+            </div>
+          <div class="form-group shadow-textarea">
+              <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+            </div>
+        
+            <button class="btn btn-success">Upload</button>
+            <button (click)="ShowEducation()" class="btn btn-danger">Cancel</button>
+        </div>
+        <div *ngIf="education">
+          <button (click)="ShowEducation()" class="btn btn-success">Add</button>
+          <app-table></app-table>
+        </div>
+        
+        </div>
+         <!-- educationdetail -->
+
+         <!-- skills -->
+
+         <div class="skills">
+            <h3>Add Your Skills</h3>
+             
+        <div *ngIf="!skills">
+
+            <div class="form-group row">
+                <label for="skill" class="col-sm-2 col-form-label">Skills *</label>
+                <div class="col-sm-6">
+                <select class="form-control" id="skill" required>
+                    <option>Select</option>
+                      <option value="mother">SAP HANA</option>
+                      <option value="children">SAP ABAP</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="yearofexperience" class="col-sm-2 col-form-label">Years Of  Experience *</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="yearofexperience" placeholder="">
+                </div>
+            </div>
+
+          <div class="form-group shadow-textarea">
+              <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+            </div>
+        
+            <button class="btn btn-success">Upload</button>
+            <button (click)="ShowSkills()" class="btn btn-danger">Cancel</button>
+        </div>
+        <div *ngIf="skills">
+          <button (click)="ShowSkills()" class="btn btn-success">Add</button>
+          <app-table></app-table>
+        </div>
+        
+        </div>
+
+         <!-- skills -->
+
+         <!-- language -->
+
+         <div class="language">
+            <h3>Languages</h3>
+             
+        <div *ngIf="!language">
+
+            <div class="form-group row">
+                <label for="language" class="col-sm-2 col-form-label">language *</label>
+                <div class="col-sm-6">
+                <select class="form-control" id="language" required>
+                    <option>Select</option>
+                      <option value="english">English</option>
+                      <option value="kannada">Kannada</option>
+                      <option value="malayalam">Malayalam</option>
+                      <option value="marati">Marati</option>
+                      <option value="tamil">Tamil</option>
+                      <option value="telugu">Telugu</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="fluency" class="col-sm-2 col-form-label">Fluency  *</label>
+                <div class="col-sm-6">
+                <select class="form-control" id="fluency" required>
+                    <option>Select</option>
+                      <option value="mother">Write</option>
+                      <option value="children">Read</option>
+                      <option value="children">Speak</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="competency " class="col-sm-2 col-form-label">Competency  *</label>
+                <div class="col-sm-6">
+                <select class="form-control" id="competency " required>
+                    <option>Select</option>
+                      <option value="mother">Poor</option>
+                      <option value="children">Basic</option>
+                      <option value="children">Good</option>
+                      <option value="children">Mother Tongue</option>
+                  </select>
+                </div>
+            </div>
+
+
+          <div class="form-group shadow-textarea">
+              <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+            </div>
+        
+            <button class="btn btn-success">Upload</button>
+            <button (click)="ShowLanguges()" class="btn btn-danger">Cancel</button>
+        </div>
+        <div *ngIf="language">
+          <button (click)="ShowLanguges()" class="btn btn-success">Add</button>
+          <app-table></app-table>
+        </div>
+        
+        </div>
+
+         <!-- language -->
+
+         <!-- certificates -->
+
+         <div class="certificates">
+            <h3>Certificates</h3>
+             
+        <div *ngIf="!certificate">
+
+            <div class="form-group row">
+                <label for="license" class="col-sm-2 col-form-label">License Type *</label>
+                <div class="col-sm-6">
+                <select class="form-control" id="license" required>
+                    <option>Select</option>
+                      <option value="mother">SAP ABAP</option>
+                      <option value="children">SAP HANA</option>
+                  </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="licensenumber" class="col-sm-2 col-form-label">License Number *</label>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control" id="licensenumber" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="issue" class="col-sm-2 col-form-label">Issued Date *</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control" id="issue" placeholder="">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="expirydate" class="col-sm-2 col-form-label">Expiry Date *</label>
+                <div class="col-sm-6">
+                  <input type="date" class="form-control" id="expirydate" placeholder="">
+                </div>
+            </div>
+
+          <div class="form-group shadow-textarea">
+              <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+            </div>
+        
+            <button class="btn btn-success">Upload</button>
+            <button (click)="ShowCertificates()" class="btn btn-danger">Cancel</button>
+        </div>
+        <div *ngIf="certificate">
+          <button (click)="ShowCertificates()" class="btn btn-success">Add</button>
+          <app-table></app-table>
+        </div>
+        
+        </div>
+
+         <!-- certificates -->
+
+          <!-- attachment -->
+          <div class="attachmnt-form">
+              <h3>Attachments</h3>
+          
+          <div *ngIf="!qualification">
+          <label for="singleFile">Upload file</label>
+          <input id="singleFile" type="file" [fileUploadInputFor]= "fileUploadQueue"/>
+          
+          <mat-file-upload-queue #fileUploadQueue
+              [fileAlias]="'file'"
+              [httpUrl]="'http://localhost:8180/jax-rs-jersey-application-sample'">
+           
+              <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+          </mat-file-upload-queue>
+            <div class="form-group shadow-textarea">
+                <textarea class="form-control z-depth-1" rows="3" placeholder="Comments" required></textarea>
+              </div>
+          
+              <button class="btn btn-success">Upload</button>
+              <button (click)="ShowQualification()" class="btn btn-danger">Cancel</button>
+          </div>
+          <div *ngIf="qualification">
+            <button (click)="ShowQualification()" class="btn btn-success">Add</button>
+          </div>
+          
+          </div>
+          <!-- attachment -->
+
+        </div>
+
+      </mat-tab>
+    </mat-tab-group>
+
+  </div>
+</div>
+
+</div>
+
+</mat-sidenav-container>

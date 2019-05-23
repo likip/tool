@@ -1,0 +1,132 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+  .logo{
+    width: 100%;
+  }
+ 
+  .mat-sidenav-container{
+    background-color: white;
+    height: auto;
+  }
+
+  .table{
+    margin-top: 50px;
+  }
+
+  .card-deck{
+    margin-top: 30px;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+
+  .parent{
+    margin-top: 0px;
+  }
+
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 10px;
+  }
+
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+
+  button.example-icon.mat-button {
+    margin-left: auto;
+}
+
+  .mat-toolbar.mat-primary {
+    background: #fff;
+    color: #3f51b5;
+}
+
+.card-title {
+    margin-bottom: .75rem;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.example-button-toggle-label {
+  display: inline-block;
+  margin: 16px;
+}
+
+/* css */
+
+input[type="date"]::before { 
+  content: attr(data-placeholder);
+  width: 100%;
+}
+input[type="date"]:focus::before,
+input[type="date"]:valid::before { display: none }
+
+/* ::ng-deep mat-tab-body-content{
+  overflow: initial !important;
+} */
+::ng-deep .mat-tab-body-content {
+  height: 100%;
+  overflow: initial;
+}
+
+.mat-tab-body-content {
+  height: 100%;
+  overflow: initial;
+}
+
+.personal-form{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.contact-form{
+  margin-top: 20px;
+}
+
+.attachmnt-form{
+  margin-bottom: 50px;
+}
+
+.add-emergency{
+  margin-top: 30px;
+}
+.add-dependents{
+  margin-top: 30px;
+}
+.supervisors {
+  margin-top: 31px;
+}
+.work h3{
+  margin-bottom: 20px;
+}
+.work {
+  margin-bottom: 30px;
+}
+.education{margin-bottom: 30px;}
+.language{margin-bottom: 30px;}
+.skills{margin-bottom: 30px;}
+.qual{margin-bottom: 30px;}
+
+.add-immigration{
+  margin-top: 30px;
+}
+label.right-align {
+  margin-right: 113px;
+}
+.title-job{
+  margin-bottom: 30px;
+}

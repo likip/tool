@@ -1,0 +1,68 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+  .logo{
+    width: 100%;
+  }
+ 
+  .mat-sidenav-container{
+    background-color: white;
+    height: 1000px;
+  }
+  .table{
+    margin-top: 50px;
+  }
+
+  .card-deck{
+    margin-top: 30px;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .menu-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+  .menu-button.rotated {
+    transform: rotate(180deg);
+  }
+  .parent{
+    margin-top: 0px;
+  }
+  .submenu {
+    overflow-y: hidden;
+    transition: transform 300ms ease;
+    transform: scaleY(0);
+    transform-origin: top;
+    padding-left: 10px;
+  }
+  .submenu.expanded {
+    transform: scaleY(1);
+  }
+
+  .mat-toolbar.mat-primary {
+    background: #fff;
+    color: #3f51b5;
+}
+
+button.example-icon {
+  margin-left: auto;
+}
+
+.tables{
+  align-content: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+ /* users css */
+ .user-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.btn {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 10px;
+}
