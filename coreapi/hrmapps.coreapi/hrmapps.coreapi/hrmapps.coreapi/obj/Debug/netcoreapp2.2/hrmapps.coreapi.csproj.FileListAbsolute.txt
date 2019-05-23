@@ -1,0 +1,14 @@
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\bin\Debug\netcoreapp2.2\hrmapps.coreapi.deps.json
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\bin\Debug\netcoreapp2.2\hrmapps.coreapi.runtimeconfig.json
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\bin\Debug\netcoreapp2.2\hrmapps.coreapi.runtimeconfig.dev.json
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\bin\Debug\netcoreapp2.2\hrmapps.coreapi.dll
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.csproj.CoreCompileInputs.cache
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.RazorAssemblyInfo.cache
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.RazorAssemblyInfo.cs
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.AssemblyInfoInputs.cache
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.AssemblyInfo.cs
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.RazorTargetAssemblyInfo.cache
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\bin\Debug\netcoreapp2.2\hrmapps.coreapi.pdb
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.dll
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.pdb
+E:\src\hrm\hrm\coreapi\hrmapps.coreapi\hrmapps.coreapi\hrmapps.coreapi\obj\Debug\netcoreapp2.2\hrmapps.coreapi.csprojResolveAssemblyReference.cache
