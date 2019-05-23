@@ -1,6 +1,6 @@
 
-import { HttpClient,HttpHeaders } from '@angular/common/http';
-import {Component,EventEmitter} from "@angular/core"
+import { HttpClient,HttpHeaders} from '@angular/common/http';
+import {Component} from "@angular/core"
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -17,10 +17,9 @@ const httpOptions = {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'try';
+  title = 'HRM TOOL';
 
   constructor(private http:HttpClient){
-  
   }
 
 ngOnInit(){
