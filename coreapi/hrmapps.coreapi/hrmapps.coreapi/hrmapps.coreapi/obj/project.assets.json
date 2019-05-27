@@ -12253,11 +12253,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "E:\\src\\hrm\\hrm\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj",
+      "projectUniqueName": "E:\\src\\hrmfinal\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj",
       "projectName": "hrmapps.coreapi",
-      "projectPath": "E:\\src\\hrm\\hrm\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj",
+      "projectPath": "E:\\src\\hrmfinal\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "E:\\src\\hrm\\hrm\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\obj\\",
+      "outputPath": "E:\\src\\hrmfinal\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
