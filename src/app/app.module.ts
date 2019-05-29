@@ -10,9 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule, MatSidenavModule, MatCardModule, MatProgressSpinnerModule, MatFormFieldModule, MatSelectModule, MatNativeDateModule} from '@angular/material';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatDialogModule, MatInputModule, MatPaginatorModule, MatSortModule,
-  MatTableModule
-} from '@angular/material';
+import { MatDialogModule, MatInputModule, MatPaginatorModule, MatSortModule,MatTableModule} from '@angular/material';
 import { AngularFileUploaderModule } from "angular-file-uploader";
 import { HttpClientModule} from '@angular/common/http';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
@@ -20,7 +18,7 @@ import { MatIconModule,MatButtonModule } from '@angular/material';
 import { MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NewsideComponent } from './newside/newside.component';
 import { TableComponent } from './table/table.component';
 import { ChartsComponent } from './charts/charts.component';
@@ -104,6 +102,7 @@ import { LeaveapplicantsComponent } from './admin/pages/Admin/configuration/emai
 import { LeaverejectionsComponent } from './admin/pages/Admin/configuration/emailsubscriptions/leaverejections/leaverejections.component';
 import { LeaveapprovalsComponent } from './admin/pages/Admin/configuration/emailsubscriptions/leaveapprovals/leaveapprovals.component';
 import { CreatenotificationsComponent } from './admin/pages/Admin/configuration/emailsubscriptions/createnotifications/createnotifications.component';
+import {AuthGuard} from './auth.guard';
 
 const config: InputFileConfig = {};
 
@@ -189,7 +188,7 @@ const config: InputFileConfig = {};
    CreatenotificationsComponent,
   ],
   imports: [
-    BrowserModule,Ng2SmartTableModule,MatFileUploadModule,DateRangePickerModule,
+    BrowserModule,Ng2SmartTableModule,MatFileUploadModule,DateRangePickerModule,NgbModule.forRoot(),
     AppRoutingModule,ChartsModule,AngularFileUploaderModule,MatDatepickerModule,
     ReactiveFormsModule,HttpClientModule,FileUploadModule,CalendarModule,
     FormsModule,MatCardModule,MatProgressSpinnerModule,MatFormFieldModule,
@@ -198,13 +197,14 @@ const config: InputFileConfig = {};
     MatIconModule,NgxSmartModalModule.forRoot() ,
     MatMenuModule,MatInputModule,MatSelectModule,
     MatSidenavModule,FormsModule, ReactiveFormsModule,
-    MatListModule,MatCheckboxModule,
-   NgbModule,MatTabsModule,MatButtonModule,MatDialogModule, MatInputModule, MatPaginatorModule, MatSortModule,
+    MatListModule,MatCheckboxModule,MatTabsModule,MatButtonModule,MatDialogModule, MatInputModule, MatPaginatorModule, MatSortModule,
    MatTableModule,HttpClientModule
   ],
-  providers: [],
+  providers: [NgbActiveModal,AuthGuard],
   bootstrap: [AppComponent],
-  
+  entryComponents: [
+    AppComponent
+  ],
   exports:[
     MatSidenavModule,MatTabsModule,MatToolbarModule,MatIconModule,MatButtonModule,
     MatListModule,MatMenuModule,MatDialogModule

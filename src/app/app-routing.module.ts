@@ -73,13 +73,14 @@ import { LeaveapplicantsComponent } from './admin/pages/Admin/configuration/emai
 import { LeaveapprovalsComponent } from './admin/pages/Admin/configuration/emailsubscriptions/leaveapprovals/leaveapprovals.component';
 import { LeaverejectionsComponent } from './admin/pages/Admin/configuration/emailsubscriptions/leaverejections/leaverejections.component';
 import { CreatenotificationsComponent } from './admin/pages/Admin/configuration/emailsubscriptions/createnotifications/createnotifications.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component:LoginComponent},
   { path: 'form', component:JoiningformComponent},
   {path:'final',component:NewsideComponent},
-  {path: 'dash',component:DashComponent},
+  {path: 'dash',component:DashComponent, canActivate:[AuthGuard]},
   {path: 'users',component:UserComponent},
   {path: 'mytimesheets',component:MytimesheetsComponent},
   {path: 'applyleave',component:ApplyleaveComponent},

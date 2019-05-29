@@ -1,0 +1,81 @@
+{
+  "format": 1,
+  "restore": {
+    "c:\\Users\\AAitral\\Downloads\\HRM\\HRM\\aatral\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj": {}
+  },
+  "projects": {
+    "c:\\Users\\AAitral\\Downloads\\HRM\\HRM\\aatral\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "c:\\Users\\AAitral\\Downloads\\HRM\\HRM\\aatral\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj",
+        "projectName": "hrmapps.coreapi",
+        "projectPath": "c:\\Users\\AAitral\\Downloads\\HRM\\HRM\\aatral\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi.csproj",
+        "packagesPath": "C:\\Users\\AAitral\\.nuget\\packages\\",
+        "outputPath": "c:\\Users\\AAitral\\Downloads\\HRM\\HRM\\aatral\\coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\hrmapps.coreapi\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\AAitral\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[1.60.6, )"
+            },
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
