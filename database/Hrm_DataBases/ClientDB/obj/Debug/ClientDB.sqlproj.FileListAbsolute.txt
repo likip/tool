@@ -1,0 +1,9 @@
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\bin\Debug\ClientDB.dacpac
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\bin\Debug\ClientDB.dll
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\bin\Debug\ClientDB.pdb
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\obj\Debug\Model.xml
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\obj\Debug\refactor.xml
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\obj\Debug\postdeploy.sql
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\obj\Debug\predeploy.sql
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\obj\Debug\ClientDB.dll
+E:\src\hrmfinal\database\Hrm_DataBases\ClientDB\obj\Debug\ClientDB.pdb

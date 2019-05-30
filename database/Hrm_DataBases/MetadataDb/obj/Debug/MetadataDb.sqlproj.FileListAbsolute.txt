@@ -1,0 +1,9 @@
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\bin\Debug\MetadataDb.dacpac
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\bin\Debug\MetadataDb.dll
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\bin\Debug\MetadataDb.pdb
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\obj\Debug\Model.xml
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\obj\Debug\refactor.xml
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\obj\Debug\postdeploy.sql
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\obj\Debug\predeploy.sql
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\obj\Debug\MetadataDb.dll
+E:\src\hrmfinal\database\Hrm_DataBases\MetadataDb\obj\Debug\MetadataDb.pdb

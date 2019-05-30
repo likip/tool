@@ -1,0 +1,21 @@
+CREATE TABLE [dbo].[UserLogin] (
+    [LoginId]           INT             IDENTITY (1, 1) NOT NULL,
+    [UserId]            UNIQUEIDENTIFIER             NOT NULL,
+    [PasswordHash]      NVARCHAR(4000) NOT NULL,
+    [LastPwdChangedOn]  DATETIME        NOT NULL,
+    [IncorrectAttempts] INT             NULL,
+    [IsActive]          BIT             CONSTRAINT [DF__UserLogin__IsAct__52593CB8] DEFAULT 1 NOT NULL,
+    [CreatedOn]         DATETIME        CONSTRAINT [DF__UserLogin__Creat__534D60F1] DEFAULT (getutcdate()) NOT NULL,
+    [CreatedBy]         UNIQUEIDENTIFIER             NOT NULL,
+    [LastUpdatedBy]     UNIQUEIDENTIFIER             NULL,
+    [LastUpdatedOn]     DATETIME        NULL,
+    [IsLocked]          BIT             CONSTRAINT [DF_UserLogins_IsLocked] DEFAULT 0 NOT NULL,
+    [ChangePasswordOnNextLogin] BIT NOT NULL DEFAULT 1, 
+    [IsPasswordReset] BIT NULL, 
+    [ResetCode] NCHAR(16) NULL, 
+    [ResetCodeValidUpto] DATETIME NULL, 
+    CONSTRAINT [PK_UserLogins] PRIMARY KEY CLUSTERED ([LoginId] ASC), 
+    CONSTRAINT [FK_UserLogin_User_UserId] FOREIGN KEY ([UserId]) REFERENCES [User]([UserId]), 
+    CONSTRAINT [FK_UserLogin_User_CreatedBy] FOREIGN KEY ([CreatedBy]) REFERENCES [User]([UserId]),
+	CONSTRAINT [FK_UserLogin_User_LastUpdatedBy] FOREIGN KEY ([LastUpdatedBy]) REFERENCES [User]([UserId])
+);
