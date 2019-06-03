@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     this.Auth.getLogindetails(username,password).subscribe(data => {
       if(data.success){  //data.success fetchs the success alert of login
-this.router.navigate(['admin'])
+       this.router.navigate(['dash'])//navigation leads to dashboard
       }else{
         window.alert("invalid crendentials" + data.message);//data.message fetchs the error type message
       }
