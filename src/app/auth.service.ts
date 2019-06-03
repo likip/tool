@@ -11,7 +11,7 @@ interface myData{
 })
 export class AuthService {
 
-  private LoggedInStatus= false;
+  private LoggedInStatus= true;
 
   setLoggedIn(value : boolean){
     this.LoggedInStatus=value
@@ -25,7 +25,7 @@ export class AuthService {
 
   getLogindetails(username,password){
   // to post the login data
-   return this.http.post<myData>('url',{
+   return this.http.post<myData>('dash',{
    username,
     password
   })
