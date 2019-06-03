@@ -1,47 +1,48 @@
+using hrmapps.coreapi.DataAccess;
+using hrmapps.coreapi.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Primitives;
-using hrmapps.coreapi.Models;
-using hrmapps.coreapi.DataAccess;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace hrmapps.coreapi.Controllers
 {
   [ApiVersion("1.0")]
   [Route("api/v{v:apiVersion}/login")]
   [ApiController]
-  public class LoginController : ControllerBase
+  public class PasswordManageController : ControllerBase
   {
     //Injecting Ilogger into the controller for logging
-    private readonly ILogger<LoginController> _logger;
-    private LoginDA _loginDA;
+    private readonly ILogger<PasswordManageController> _logger;
+    private ChangePasswordDA _changepasswordDA;
+    //private ResetPasswordDA _resetpasswordDA;
     private const string _messageCodePrefix = "USP-US-";
 
     //Constructer for initializing the logger
-    public LoginController(ILogger<LoginController> logger)
+    public PasswordManageController(ILogger<PasswordManageController> logger)
     {
       _logger = logger;
     }
 
     [HttpPost]
-    [Route("locallogin")]
-    public async Task<ActionResult> GetLocalLogin([FromBody] LoginDTO loginInfo)
+    [Route("changepassword")]
+    public ActionResult GetChangePassword([FromBody] ChangePasswordDTO changeInfo, [FromQuery(Name = "userId")] Guid userId)
     {
       StringValues clientConnectionString;
+
       try
       {
         if (HttpContext.Request.Headers.TryGetValue("ConnectionString", out clientConnectionString))
         {
           if (ModelState.IsValid)
           {
-            _loginDA = new LoginDA();
+            _changepasswordDA = new ChangePasswordDA();
 
-            var result = _loginDA.GetLocalLogin(loginInfo, clientConnectionString);
+
+            var result = _changepasswordDA.GetChangePassword(changeInfo, userId, clientConnectionString);
             if (result.ReturnValue == -1)
             {
               return BadRequest(new ErrorResponseDTO()
@@ -53,15 +54,14 @@ namespace hrmapps.coreapi.Controllers
             }
             else
             {
-              //result.Table.AuthorizationToken = GenearteJWTToken.GenerateToken(result.Table.UserId.ToString());
-              //dynamic response = await GenearteJWTToken.GenerateToken();
-              //if (response.ToString() != "Token Invalid")
-              //  result.Table.AuthenticationToken = ((Newtonsoft.Json.Linq.JValue)((Newtonsoft.Json.Linq.JProperty)((Newtonsoft.Json.Linq.JContainer)response).Last).Value).Value.ToString();
-              //else
-              //  return BadRequest();
-              SuccessResponseDTO<LoginDTO> loginSuccessDTO = new SuccessResponseDTO<LoginDTO>().CreateSuccessResponse(result.Table, _messageCodePrefix + result.Result, HttpContext.TraceIdentifier.ToString());
-              return Ok(loginSuccessDTO);
+              return Ok(new StatusInfoDTO()
+              {
+                MessageCode = _messageCodePrefix + result.Result,
+                RequestId = HttpContext.TraceIdentifier.ToString()
+
+              });
             }
+
           }
           else
           {
